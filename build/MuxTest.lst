@@ -1,0 +1,2235 @@
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.eabi_attribute 28, 1
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 2
+  10              		.eabi_attribute 34, 1
+  11              		.eabi_attribute 18, 4
+  12              		.file	"MuxTest.cpp"
+  13              		.text
+  14              	.Ltext0:
+  15              		.cfi_sections	.debug_frame
+  16              		.section	.text._ZN5daisy3LedD2Ev,"axG",%progbits,_ZN5daisy3LedD5Ev,comdat
+  17              		.align	1
+  18              		.p2align 2,,3
+  19              		.weak	_ZN5daisy3LedD2Ev
+  20              		.arch armv7e-m
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  24              		.fpu fpv5-d16
+  26              	_ZN5daisy3LedD2Ev:
+  27              	.LVL0:
+  28              	.LFB1306:
+  29              		.file 1 "../DaisyExamples/libdaisy/src/hid/led.h"
+   1:../DaisyExamples/libdaisy/src/hid/led.h **** 
+   2:../DaisyExamples/libdaisy/src/hid/led.h **** #pragma once
+   3:../DaisyExamples/libdaisy/src/hid/led.h **** #ifndef DSY_LED_H
+   4:../DaisyExamples/libdaisy/src/hid/led.h **** #define DSY_LED_H
+   5:../DaisyExamples/libdaisy/src/hid/led.h **** #include "daisy_core.h"
+   6:../DaisyExamples/libdaisy/src/hid/led.h **** #include "per/gpio.h"
+   7:../DaisyExamples/libdaisy/src/hid/led.h **** 
+   8:../DaisyExamples/libdaisy/src/hid/led.h **** /* TODO - Get this set up to work with the dev_leddriver stuff as well
+   9:../DaisyExamples/libdaisy/src/hid/led.h **** - Setup Hardware PWM for pins that have it
+  10:../DaisyExamples/libdaisy/src/hid/led.h **** */
+  11:../DaisyExamples/libdaisy/src/hid/led.h **** 
+  12:../DaisyExamples/libdaisy/src/hid/led.h **** namespace daisy
+  13:../DaisyExamples/libdaisy/src/hid/led.h **** {
+  14:../DaisyExamples/libdaisy/src/hid/led.h **** /**
+  15:../DaisyExamples/libdaisy/src/hid/led.h ****     @brief LED Class providing simple Software PWM ability, etc \n 
+  16:../DaisyExamples/libdaisy/src/hid/led.h ****     Eventually this will work with hardware PWM, and external LED Driver devices as well.
+  17:../DaisyExamples/libdaisy/src/hid/led.h ****     @author shensley
+  18:../DaisyExamples/libdaisy/src/hid/led.h ****     @date March 2020
+  19:../DaisyExamples/libdaisy/src/hid/led.h ****     @ingroup feedback
+  20:../DaisyExamples/libdaisy/src/hid/led.h **** */
+  21:../DaisyExamples/libdaisy/src/hid/led.h **** class Led
+  22:../DaisyExamples/libdaisy/src/hid/led.h **** {
+  23:../DaisyExamples/libdaisy/src/hid/led.h ****   public:
+  24:../DaisyExamples/libdaisy/src/hid/led.h ****     Led() {}
+  25:../DaisyExamples/libdaisy/src/hid/led.h ****     ~Led() {}
+  30              		.loc 1 25 5 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 2
+
+
+  34              		@ link register save eliminated.
+  35              		.loc 1 25 13 is_stmt 0 view .LVU1
+  36 0000 7047     		bx	lr
+  37              		.cfi_endproc
+  38              	.LFE1306:
+  40              		.weak	_ZN5daisy3LedD1Ev
+  41              		.thumb_set _ZN5daisy3LedD1Ev,_ZN5daisy3LedD2Ev
+  42 0002 00BF     		.section	.text._ZN5daisy9DaisySeedD2Ev,"axG",%progbits,_ZN5daisy9DaisySeedD5Ev,comdat
+  43              		.align	1
+  44              		.p2align 2,,3
+  45              		.weak	_ZN5daisy9DaisySeedD2Ev
+  46              		.syntax unified
+  47              		.thumb
+  48              		.thumb_func
+  49              		.fpu fpv5-d16
+  51              	_ZN5daisy9DaisySeedD2Ev:
+  52              	.LVL1:
+  53              	.LFB1454:
+  54              		.file 2 "../DaisyExamples/libdaisy/src/daisy_seed.h"
+   1:../DaisyExamples/libdaisy/src/daisy_seed.h **** #pragma once
+   2:../DaisyExamples/libdaisy/src/daisy_seed.h **** #ifndef DSY_SEED_H
+   3:../DaisyExamples/libdaisy/src/daisy_seed.h **** #define DSY_SEED_H
+   4:../DaisyExamples/libdaisy/src/daisy_seed.h **** 
+   5:../DaisyExamples/libdaisy/src/daisy_seed.h **** #include "daisy.h"
+   6:../DaisyExamples/libdaisy/src/daisy_seed.h **** 
+   7:../DaisyExamples/libdaisy/src/daisy_seed.h **** //Uncomment this out if you're still using the rev2 hardware
+   8:../DaisyExamples/libdaisy/src/daisy_seed.h **** //#define SEED_REV2
+   9:../DaisyExamples/libdaisy/src/daisy_seed.h **** 
+  10:../DaisyExamples/libdaisy/src/daisy_seed.h **** namespace daisy
+  11:../DaisyExamples/libdaisy/src/daisy_seed.h **** {
+  12:../DaisyExamples/libdaisy/src/daisy_seed.h **** /**
+  13:../DaisyExamples/libdaisy/src/daisy_seed.h ****    @brief This is the higher-level interface for the Daisy board. \n 
+  14:../DaisyExamples/libdaisy/src/daisy_seed.h ****     All basic peripheral configuration/initialization is setup here. \n
+  15:../DaisyExamples/libdaisy/src/daisy_seed.h **** 
+  16:../DaisyExamples/libdaisy/src/daisy_seed.h ****    @ingroup boards
+  17:../DaisyExamples/libdaisy/src/daisy_seed.h **** */
+  18:../DaisyExamples/libdaisy/src/daisy_seed.h **** class DaisySeed
+  19:../DaisyExamples/libdaisy/src/daisy_seed.h **** {
+  20:../DaisyExamples/libdaisy/src/daisy_seed.h ****   public:
+  21:../DaisyExamples/libdaisy/src/daisy_seed.h ****     DaisySeed() {}
+  22:../DaisyExamples/libdaisy/src/daisy_seed.h ****     ~DaisySeed() {}
+  55              		.loc 2 22 5 is_stmt 1 view -0
+  56              		.cfi_startproc
+  57              		@ args = 0, pretend = 0, frame = 0
+  58              		@ frame_needed = 0, uses_anonymous_args = 0
+  59              		@ link register save eliminated.
+  60              	.LBB79:
+  61              	.LBI79:
+  62              		.file 3 "../DaisyExamples/libdaisy/src/sys/system.h"
+   1:../DaisyExamples/libdaisy/src/sys/system.h **** #ifndef DSY_SYSTEM_H
+   2:../DaisyExamples/libdaisy/src/sys/system.h **** #define DSY_SYSTEM_H
+   3:../DaisyExamples/libdaisy/src/sys/system.h **** 
+   4:../DaisyExamples/libdaisy/src/sys/system.h **** #include <cstdint>
+   5:../DaisyExamples/libdaisy/src/sys/system.h **** #include "per/tim.h"
+   6:../DaisyExamples/libdaisy/src/sys/system.h **** 
+   7:../DaisyExamples/libdaisy/src/sys/system.h **** namespace daisy
+   8:../DaisyExamples/libdaisy/src/sys/system.h **** {
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 3
+
+
+   9:../DaisyExamples/libdaisy/src/sys/system.h **** /** A handle for interacting with the Core System. 
+  10:../DaisyExamples/libdaisy/src/sys/system.h ****  ** This includes the Clock tree, MPU, global DMA initialization,
+  11:../DaisyExamples/libdaisy/src/sys/system.h ****  ** cache handling, and any other necessary global initiailzation
+  12:../DaisyExamples/libdaisy/src/sys/system.h ****  **
+  13:../DaisyExamples/libdaisy/src/sys/system.h ****  ** @author shensley
+  14:../DaisyExamples/libdaisy/src/sys/system.h ****  ** @addtogroup system
+  15:../DaisyExamples/libdaisy/src/sys/system.h ****  */
+  16:../DaisyExamples/libdaisy/src/sys/system.h **** class System
+  17:../DaisyExamples/libdaisy/src/sys/system.h **** {
+  18:../DaisyExamples/libdaisy/src/sys/system.h ****   public:
+  19:../DaisyExamples/libdaisy/src/sys/system.h ****     /** Contains settings for initializing the System */
+  20:../DaisyExamples/libdaisy/src/sys/system.h ****     struct Config
+  21:../DaisyExamples/libdaisy/src/sys/system.h ****     {
+  22:../DaisyExamples/libdaisy/src/sys/system.h ****         /** Specifies the system clock frequency that feeds APB/AHB clocks, etc. */
+  23:../DaisyExamples/libdaisy/src/sys/system.h ****         enum class SysClkFreq
+  24:../DaisyExamples/libdaisy/src/sys/system.h ****         {
+  25:../DaisyExamples/libdaisy/src/sys/system.h ****             FREQ_400MHZ,
+  26:../DaisyExamples/libdaisy/src/sys/system.h ****             FREQ_480MHZ,
+  27:../DaisyExamples/libdaisy/src/sys/system.h ****         };
+  28:../DaisyExamples/libdaisy/src/sys/system.h **** 
+  29:../DaisyExamples/libdaisy/src/sys/system.h ****         /** Method to call on the struct to set to defaults
+  30:../DaisyExamples/libdaisy/src/sys/system.h ****          ** CPU Freq set to 400MHz
+  31:../DaisyExamples/libdaisy/src/sys/system.h ****          ** Cache Enabled 
+  32:../DaisyExamples/libdaisy/src/sys/system.h ****          ** */
+  33:../DaisyExamples/libdaisy/src/sys/system.h ****         void Defaults()
+  34:../DaisyExamples/libdaisy/src/sys/system.h ****         {
+  35:../DaisyExamples/libdaisy/src/sys/system.h ****             cpu_freq   = SysClkFreq::FREQ_400MHZ;
+  36:../DaisyExamples/libdaisy/src/sys/system.h ****             use_dcache = true;
+  37:../DaisyExamples/libdaisy/src/sys/system.h ****             use_icache = true;
+  38:../DaisyExamples/libdaisy/src/sys/system.h ****         }
+  39:../DaisyExamples/libdaisy/src/sys/system.h **** 
+  40:../DaisyExamples/libdaisy/src/sys/system.h ****         /** Method to call on the struct to set to boost mode:
+  41:../DaisyExamples/libdaisy/src/sys/system.h ****          ** CPU Freq set to 480MHz
+  42:../DaisyExamples/libdaisy/src/sys/system.h ****          ** Cache Enabled 
+  43:../DaisyExamples/libdaisy/src/sys/system.h ****          ** */
+  44:../DaisyExamples/libdaisy/src/sys/system.h ****         void Boost()
+  45:../DaisyExamples/libdaisy/src/sys/system.h ****         {
+  46:../DaisyExamples/libdaisy/src/sys/system.h ****             cpu_freq   = SysClkFreq::FREQ_480MHZ;
+  47:../DaisyExamples/libdaisy/src/sys/system.h ****             use_dcache = true;
+  48:../DaisyExamples/libdaisy/src/sys/system.h ****             use_icache = true;
+  49:../DaisyExamples/libdaisy/src/sys/system.h ****         }
+  50:../DaisyExamples/libdaisy/src/sys/system.h **** 
+  51:../DaisyExamples/libdaisy/src/sys/system.h ****         SysClkFreq cpu_freq;
+  52:../DaisyExamples/libdaisy/src/sys/system.h ****         bool       use_dcache;
+  53:../DaisyExamples/libdaisy/src/sys/system.h ****         bool       use_icache;
+  54:../DaisyExamples/libdaisy/src/sys/system.h ****     };
+  55:../DaisyExamples/libdaisy/src/sys/system.h **** 
+  56:../DaisyExamples/libdaisy/src/sys/system.h ****     System() {}
+  57:../DaisyExamples/libdaisy/src/sys/system.h ****     ~System() {}
+  63              		.loc 3 57 5 view .LVU3
+  64              		.loc 3 57 5 is_stmt 0 view .LVU4
+  65              	.LBE79:
+  66              	.LBB80:
+  67              	.LBI80:
+  68              		.file 4 "../DaisyExamples/libdaisy/src/hid/usb.h"
+   1:../DaisyExamples/libdaisy/src/hid/usb.h **** #pragma once
+   2:../DaisyExamples/libdaisy/src/hid/usb.h **** #ifndef DSY_HID_USB_H
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 4
+
+
+   3:../DaisyExamples/libdaisy/src/hid/usb.h **** #define DSY_HID_USB_H
+   4:../DaisyExamples/libdaisy/src/hid/usb.h **** #include <stdint.h>
+   5:../DaisyExamples/libdaisy/src/hid/usb.h **** #include <stdlib.h>
+   6:../DaisyExamples/libdaisy/src/hid/usb.h **** 
+   7:../DaisyExamples/libdaisy/src/hid/usb.h **** namespace daisy
+   8:../DaisyExamples/libdaisy/src/hid/usb.h **** /** @addtogroup externals
+   9:../DaisyExamples/libdaisy/src/hid/usb.h ****     @{
+  10:../DaisyExamples/libdaisy/src/hid/usb.h **** */
+  11:../DaisyExamples/libdaisy/src/hid/usb.h **** 
+  12:../DaisyExamples/libdaisy/src/hid/usb.h **** {
+  13:../DaisyExamples/libdaisy/src/hid/usb.h **** /** 
+  14:../DaisyExamples/libdaisy/src/hid/usb.h ****     @brief Interface for initializing and using the USB Peripherals on the daisy
+  15:../DaisyExamples/libdaisy/src/hid/usb.h ****     @author Stephen Hensley
+  16:../DaisyExamples/libdaisy/src/hid/usb.h ****     @date December 2019
+  17:../DaisyExamples/libdaisy/src/hid/usb.h **** */
+  18:../DaisyExamples/libdaisy/src/hid/usb.h **** class UsbHandle
+  19:../DaisyExamples/libdaisy/src/hid/usb.h **** {
+  20:../DaisyExamples/libdaisy/src/hid/usb.h ****   public:
+  21:../DaisyExamples/libdaisy/src/hid/usb.h ****     /** Return values for USBHandle Functions */
+  22:../DaisyExamples/libdaisy/src/hid/usb.h ****     enum class Result
+  23:../DaisyExamples/libdaisy/src/hid/usb.h ****     {
+  24:../DaisyExamples/libdaisy/src/hid/usb.h ****         OK,
+  25:../DaisyExamples/libdaisy/src/hid/usb.h ****         ERR,
+  26:../DaisyExamples/libdaisy/src/hid/usb.h ****     };
+  27:../DaisyExamples/libdaisy/src/hid/usb.h **** 
+  28:../DaisyExamples/libdaisy/src/hid/usb.h ****     /** Specified which of the two USB Peripherals to initialize. */
+  29:../DaisyExamples/libdaisy/src/hid/usb.h ****     enum UsbPeriph
+  30:../DaisyExamples/libdaisy/src/hid/usb.h ****     {
+  31:../DaisyExamples/libdaisy/src/hid/usb.h ****         FS_INTERNAL, /**< Internal pin */
+  32:../DaisyExamples/libdaisy/src/hid/usb.h ****         FS_EXTERNAL, /**< FS External D+ pin is Pin 38 (GPIO32). FS External D- pin is Pin 37 (GPIO
+  33:../DaisyExamples/libdaisy/src/hid/usb.h ****         FS_BOTH,     /**< Both */
+  34:../DaisyExamples/libdaisy/src/hid/usb.h ****     };
+  35:../DaisyExamples/libdaisy/src/hid/usb.h **** 
+  36:../DaisyExamples/libdaisy/src/hid/usb.h **** 
+  37:../DaisyExamples/libdaisy/src/hid/usb.h ****     /** Function called upon reception of a buffer */
+  38:../DaisyExamples/libdaisy/src/hid/usb.h ****     typedef void (*ReceiveCallback)(uint8_t* buff, uint32_t* len);
+  39:../DaisyExamples/libdaisy/src/hid/usb.h **** 
+  40:../DaisyExamples/libdaisy/src/hid/usb.h ****     UsbHandle() {}
+  41:../DaisyExamples/libdaisy/src/hid/usb.h **** 
+  42:../DaisyExamples/libdaisy/src/hid/usb.h ****     ~UsbHandle() {}
+  69              		.loc 4 42 5 is_stmt 1 view .LVU5
+  70              		.loc 4 42 5 is_stmt 0 view .LVU6
+  71              	.LBE80:
+  72              	.LBB81:
+  73              	.LBI81:
+  74              		.file 5 "../DaisyExamples/libdaisy/src/per/adc.h"
+   1:../DaisyExamples/libdaisy/src/per/adc.h **** #pragma once
+   2:../DaisyExamples/libdaisy/src/per/adc.h **** #ifndef DSY_ADC_H
+   3:../DaisyExamples/libdaisy/src/per/adc.h **** #define DSY_ADC_H /**< Macro */
+   4:../DaisyExamples/libdaisy/src/per/adc.h **** #include <stdint.h>
+   5:../DaisyExamples/libdaisy/src/per/adc.h **** #include <stdlib.h>
+   6:../DaisyExamples/libdaisy/src/per/adc.h **** #include "daisy_core.h"
+   7:../DaisyExamples/libdaisy/src/per/adc.h **** #include "per/gpio.h"
+   8:../DaisyExamples/libdaisy/src/per/adc.h **** 
+   9:../DaisyExamples/libdaisy/src/per/adc.h **** #define DSY_ADC_MAX_CHANNELS 14 /**< Maximum number of ADC channels */
+  10:../DaisyExamples/libdaisy/src/per/adc.h **** 
+  11:../DaisyExamples/libdaisy/src/per/adc.h **** namespace daisy
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 5
+
+
+  12:../DaisyExamples/libdaisy/src/per/adc.h **** {
+  13:../DaisyExamples/libdaisy/src/per/adc.h **** /** @addtogroup analog_digital_conversion
+  14:../DaisyExamples/libdaisy/src/per/adc.h ****     @{
+  15:../DaisyExamples/libdaisy/src/per/adc.h **** */
+  16:../DaisyExamples/libdaisy/src/per/adc.h **** 
+  17:../DaisyExamples/libdaisy/src/per/adc.h **** /* While there may not be many configuration options here,
+  18:../DaisyExamples/libdaisy/src/per/adc.h **** using a struct like this allows us to add more configuration
+  19:../DaisyExamples/libdaisy/src/per/adc.h **** later without breaking existing functionality.
+  20:../DaisyExamples/libdaisy/src/per/adc.h **** */
+  21:../DaisyExamples/libdaisy/src/per/adc.h **** 
+  22:../DaisyExamples/libdaisy/src/per/adc.h **** /** Configuration Structure for a given channel */
+  23:../DaisyExamples/libdaisy/src/per/adc.h **** struct AdcChannelConfig
+  24:../DaisyExamples/libdaisy/src/per/adc.h **** {
+  25:../DaisyExamples/libdaisy/src/per/adc.h ****     /** Which pin to use for multiplexing */
+  26:../DaisyExamples/libdaisy/src/per/adc.h ****     enum MuxPin
+  27:../DaisyExamples/libdaisy/src/per/adc.h ****     {
+  28:../DaisyExamples/libdaisy/src/per/adc.h ****         MUX_SEL_0,    /**< & */
+  29:../DaisyExamples/libdaisy/src/per/adc.h ****         MUX_SEL_1,    /**< & */
+  30:../DaisyExamples/libdaisy/src/per/adc.h ****         MUX_SEL_2,    /**< & */
+  31:../DaisyExamples/libdaisy/src/per/adc.h ****         MUX_SEL_LAST, /**< & */
+  32:../DaisyExamples/libdaisy/src/per/adc.h ****     };
+  33:../DaisyExamples/libdaisy/src/per/adc.h **** 
+  34:../DaisyExamples/libdaisy/src/per/adc.h ****     /** Initializes a single ADC pin as an ADC. 
+  35:../DaisyExamples/libdaisy/src/per/adc.h ****     \param pin Pin to init.
+  36:../DaisyExamples/libdaisy/src/per/adc.h ****      */
+  37:../DaisyExamples/libdaisy/src/per/adc.h ****     void InitSingle(dsy_gpio_pin pin);
+  38:../DaisyExamples/libdaisy/src/per/adc.h **** 
+  39:../DaisyExamples/libdaisy/src/per/adc.h ****     /** 
+  40:../DaisyExamples/libdaisy/src/per/adc.h ****     Initializes a single ADC pin as a Multiplexed ADC.
+  41:../DaisyExamples/libdaisy/src/per/adc.h ****     Requires a CD405X Multiplexer connected to the pin.
+  42:../DaisyExamples/libdaisy/src/per/adc.h ****     You only need to supply the mux pins that are required,
+  43:../DaisyExamples/libdaisy/src/per/adc.h ****     e.g. a 4052 mux would only require mux_0 and mux_1.
+  44:../DaisyExamples/libdaisy/src/per/adc.h ****     Internal Callbacks handle the pin addressing.
+  45:../DaisyExamples/libdaisy/src/per/adc.h ****     \param mux_channels must be 1-8
+  46:../DaisyExamples/libdaisy/src/per/adc.h ****     \param mux_0 First mux pin
+  47:../DaisyExamples/libdaisy/src/per/adc.h ****     \param mux_1 Second mux pin
+  48:../DaisyExamples/libdaisy/src/per/adc.h ****     \param mux_2 Third mux pin
+  49:../DaisyExamples/libdaisy/src/per/adc.h ****     \param adc_pin &
+  50:../DaisyExamples/libdaisy/src/per/adc.h ****     */
+  51:../DaisyExamples/libdaisy/src/per/adc.h ****     void InitMux(dsy_gpio_pin adc_pin,
+  52:../DaisyExamples/libdaisy/src/per/adc.h ****                  size_t       mux_channels,
+  53:../DaisyExamples/libdaisy/src/per/adc.h ****                  dsy_gpio_pin mux_0,
+  54:../DaisyExamples/libdaisy/src/per/adc.h ****                  dsy_gpio_pin mux_1 = {DSY_GPIOX, 0},
+  55:../DaisyExamples/libdaisy/src/per/adc.h ****                  dsy_gpio_pin mux_2 = {DSY_GPIOX, 0});
+  56:../DaisyExamples/libdaisy/src/per/adc.h **** 
+  57:../DaisyExamples/libdaisy/src/per/adc.h ****     dsy_gpio pin_;                   /**< & */
+  58:../DaisyExamples/libdaisy/src/per/adc.h ****     dsy_gpio mux_pin_[MUX_SEL_LAST]; /**< & */
+  59:../DaisyExamples/libdaisy/src/per/adc.h ****     uint8_t  mux_channels_;          /**< & */
+  60:../DaisyExamples/libdaisy/src/per/adc.h **** };
+  61:../DaisyExamples/libdaisy/src/per/adc.h **** 
+  62:../DaisyExamples/libdaisy/src/per/adc.h **** /**
+  63:../DaisyExamples/libdaisy/src/per/adc.h ****    Handler for analog to digital conversion
+  64:../DaisyExamples/libdaisy/src/per/adc.h **** */
+  65:../DaisyExamples/libdaisy/src/per/adc.h **** class AdcHandle
+  66:../DaisyExamples/libdaisy/src/per/adc.h **** {
+  67:../DaisyExamples/libdaisy/src/per/adc.h ****   public:
+  68:../DaisyExamples/libdaisy/src/per/adc.h ****     /** Supported oversampling amounts */
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 6
+
+
+  69:../DaisyExamples/libdaisy/src/per/adc.h ****     enum OverSampling
+  70:../DaisyExamples/libdaisy/src/per/adc.h ****     {
+  71:../DaisyExamples/libdaisy/src/per/adc.h ****         OVS_NONE, /**< & */
+  72:../DaisyExamples/libdaisy/src/per/adc.h ****         OVS_4,    /**< & */
+  73:../DaisyExamples/libdaisy/src/per/adc.h ****         OVS_8,    /**< & */
+  74:../DaisyExamples/libdaisy/src/per/adc.h ****         OVS_16,   /**< & */
+  75:../DaisyExamples/libdaisy/src/per/adc.h ****         OVS_32,   /**< & */
+  76:../DaisyExamples/libdaisy/src/per/adc.h ****         OVS_64,   /**< & */
+  77:../DaisyExamples/libdaisy/src/per/adc.h ****         OVS_128,  /**< & */
+  78:../DaisyExamples/libdaisy/src/per/adc.h ****         OVS_256,  /**< & */
+  79:../DaisyExamples/libdaisy/src/per/adc.h ****         OVS_512,  /**< & */
+  80:../DaisyExamples/libdaisy/src/per/adc.h ****         OVS_1024, /**< & */
+  81:../DaisyExamples/libdaisy/src/per/adc.h ****         OVS_LAST, /**< & */
+  82:../DaisyExamples/libdaisy/src/per/adc.h ****     };
+  83:../DaisyExamples/libdaisy/src/per/adc.h **** 
+  84:../DaisyExamples/libdaisy/src/per/adc.h ****     AdcHandle() {}
+  85:../DaisyExamples/libdaisy/src/per/adc.h ****     ~AdcHandle() {}
+  75              		.loc 5 85 5 is_stmt 1 view .LVU7
+  76              		.loc 5 85 5 is_stmt 0 view .LVU8
+  77              	.LBE81:
+  78              	.LBB82:
+  79              	.LBI82:
+  80              		.file 6 "../DaisyExamples/libdaisy/src/hid/audio.h"
+   1:../DaisyExamples/libdaisy/src/hid/audio.h **** #ifndef DSY_AUDIO_H
+   2:../DaisyExamples/libdaisy/src/hid/audio.h **** #define DSY_AUDIO_H /**< & */
+   3:../DaisyExamples/libdaisy/src/hid/audio.h **** 
+   4:../DaisyExamples/libdaisy/src/hid/audio.h **** #include "per/sai.h"
+   5:../DaisyExamples/libdaisy/src/hid/audio.h **** 
+   6:../DaisyExamples/libdaisy/src/hid/audio.h **** namespace daisy
+   7:../DaisyExamples/libdaisy/src/hid/audio.h **** {
+   8:../DaisyExamples/libdaisy/src/hid/audio.h **** class AudioHandle
+   9:../DaisyExamples/libdaisy/src/hid/audio.h **** {
+  10:../DaisyExamples/libdaisy/src/hid/audio.h ****   public:
+  11:../DaisyExamples/libdaisy/src/hid/audio.h ****     /** Manually configurable details about the Audio Engine */
+  12:../DaisyExamples/libdaisy/src/hid/audio.h ****     /** TODO: Figure out how to get samplerate in here. */
+  13:../DaisyExamples/libdaisy/src/hid/audio.h ****     struct Config
+  14:../DaisyExamples/libdaisy/src/hid/audio.h ****     {
+  15:../DaisyExamples/libdaisy/src/hid/audio.h ****         size_t                        blocksize;
+  16:../DaisyExamples/libdaisy/src/hid/audio.h ****         SaiHandle::Config::SampleRate samplerate;
+  17:../DaisyExamples/libdaisy/src/hid/audio.h ****         float                         postgain;
+  18:../DaisyExamples/libdaisy/src/hid/audio.h ****     };
+  19:../DaisyExamples/libdaisy/src/hid/audio.h **** 
+  20:../DaisyExamples/libdaisy/src/hid/audio.h ****     enum class Result
+  21:../DaisyExamples/libdaisy/src/hid/audio.h ****     {
+  22:../DaisyExamples/libdaisy/src/hid/audio.h ****         OK,
+  23:../DaisyExamples/libdaisy/src/hid/audio.h ****         ERR,
+  24:../DaisyExamples/libdaisy/src/hid/audio.h ****     };
+  25:../DaisyExamples/libdaisy/src/hid/audio.h **** 
+  26:../DaisyExamples/libdaisy/src/hid/audio.h ****     /** Non-Interleaving Callback format. Both arrays arranged by float[chn][sample] */
+  27:../DaisyExamples/libdaisy/src/hid/audio.h ****     typedef void (*AudioCallback)(float** in, float** out, size_t size);
+  28:../DaisyExamples/libdaisy/src/hid/audio.h **** 
+  29:../DaisyExamples/libdaisy/src/hid/audio.h ****     /** Non-Interleaving Callback format. 
+  30:../DaisyExamples/libdaisy/src/hid/audio.h ****      ** audio is prepared as { L0, R0, L1, R1, . . . LN, RN }
+  31:../DaisyExamples/libdaisy/src/hid/audio.h ****      */
+  32:../DaisyExamples/libdaisy/src/hid/audio.h ****     typedef void (*InterleavingAudioCallback)(float* in,
+  33:../DaisyExamples/libdaisy/src/hid/audio.h ****                                               float* out,
+  34:../DaisyExamples/libdaisy/src/hid/audio.h ****                                               size_t size);
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 7
+
+
+  35:../DaisyExamples/libdaisy/src/hid/audio.h **** 
+  36:../DaisyExamples/libdaisy/src/hid/audio.h ****     AudioHandle() : pimpl_(nullptr) {}
+  37:../DaisyExamples/libdaisy/src/hid/audio.h ****     ~AudioHandle() {}
+  81              		.loc 6 37 5 is_stmt 1 view .LVU9
+  82              		.loc 6 37 5 is_stmt 0 view .LVU10
+  83              	.LBE82:
+  84              		.loc 2 22 19 view .LVU11
+  85 0000 7047     		bx	lr
+  86              		.cfi_endproc
+  87              	.LFE1454:
+  89              		.weak	_ZN5daisy9DaisySeedD1Ev
+  90              		.thumb_set _ZN5daisy9DaisySeedD1Ev,_ZN5daisy9DaisySeedD2Ev
+  91 0002 00BF     		.section	.text._ZL13AudioCallbackPfS_j,"ax",%progbits
+  92              		.align	1
+  93              		.p2align 2,,3
+  94              		.syntax unified
+  95              		.thumb
+  96              		.thumb_func
+  97              		.fpu fpv5-d16
+  99              	_ZL13AudioCallbackPfS_j:
+ 100              	.LVL2:
+ 101              	.LFB3910:
+ 102              		.file 7 "MuxTest.cpp"
+   1:MuxTest.cpp   **** #include "MuxTest.h"
+   2:MuxTest.cpp   **** //#include "daisy_seed.h"
+   3:MuxTest.cpp   **** #include "QSPI_Settings.h"
+   4:MuxTest.cpp   **** #include <string.h>
+   5:MuxTest.cpp   **** #include <atomic>
+   6:MuxTest.cpp   **** 
+   7:MuxTest.cpp   **** 
+   8:MuxTest.cpp   **** Settings setting{};
+   9:MuxTest.cpp   **** constexpr Settings defaultSetting
+  10:MuxTest.cpp   **** {
+  11:MuxTest.cpp   ****     (25000.0f + 240000.0f) / 2.0f, //RevLength
+  12:MuxTest.cpp   ****     1.0f,   //tapRatio
+  13:MuxTest.cpp   ****     0.0f,   //ModDepth
+  14:MuxTest.cpp   ****     (10.0f + 0.1f) / 2.0f,   //ModFreq
+  15:MuxTest.cpp   ****     200.0f,   //HP_Cutoff
+  16:MuxTest.cpp   ****     12000.0f,   //LP_Cutoff
+  17:MuxTest.cpp   ****     0.0f,     //Filter Resonance
+  18:MuxTest.cpp   ****     0.0f
+  19:MuxTest.cpp   **** };
+  20:MuxTest.cpp   **** 
+  21:MuxTest.cpp   **** float pot1,pot2,pot3,pot4,pot5,pot6,pot7,pot8;
+  22:MuxTest.cpp   **** float CV1,CV2,CV3,CV4,CV5,CV6,CV7,CV8;
+  23:MuxTest.cpp   **** 
+  24:MuxTest.cpp   **** Led led1,led2;
+  25:MuxTest.cpp   **** 
+  26:MuxTest.cpp   **** std::atomic<bool> save_flag{};
+  27:MuxTest.cpp   **** 
+  28:MuxTest.cpp   **** static void AudioCallback(float *in, float *out, size_t size)
+  29:MuxTest.cpp   **** {
+ 103              		.loc 7 29 1 is_stmt 1 view -0
+ 104              		.cfi_startproc
+ 105              		@ args = 0, pretend = 0, frame = 0
+ 106              		@ frame_needed = 0, uses_anonymous_args = 0
+  30:MuxTest.cpp   ****      
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 8
+
+
+  31:MuxTest.cpp   ****     led1.Update();
+ 107              		.loc 7 31 5 view .LVU13
+  29:MuxTest.cpp   ****      
+ 108              		.loc 7 29 1 is_stmt 0 view .LVU14
+ 109 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 110              		.cfi_def_cfa_offset 24
+ 111              		.cfi_offset 3, -24
+ 112              		.cfi_offset 4, -20
+ 113              		.cfi_offset 5, -16
+ 114              		.cfi_offset 6, -12
+ 115              		.cfi_offset 7, -8
+ 116              		.cfi_offset 14, -4
+  29:MuxTest.cpp   ****      
+ 117              		.loc 7 29 1 view .LVU15
+ 118 0002 0446     		mov	r4, r0
+  32:MuxTest.cpp   ****     led2.Update();
+  33:MuxTest.cpp   ****     static uint32_t timeSinceLast{};
+  34:MuxTest.cpp   **** 
+  35:MuxTest.cpp   ****     //try to save every 5 seconds if not currently saving
+  36:MuxTest.cpp   ****     if( ( (System::GetNow() - timeSinceLast) > 5000) && !save_flag )  
+ 119              		.loc 7 36 29 view .LVU16
+ 120 0004 1B4F     		ldr	r7, .L16
+  31:MuxTest.cpp   ****     led2.Update();
+ 121              		.loc 7 31 16 view .LVU17
+ 122 0006 1C48     		ldr	r0, .L16+4
+ 123              	.LVL3:
+  29:MuxTest.cpp   ****      
+ 124              		.loc 7 29 1 view .LVU18
+ 125 0008 1646     		mov	r6, r2
+ 126 000a 0D46     		mov	r5, r1
+  31:MuxTest.cpp   ****     led2.Update();
+ 127              		.loc 7 31 16 view .LVU19
+ 128 000c FFF7FEFF 		bl	_ZN5daisy3Led6UpdateEv
+ 129              	.LVL4:
+  32:MuxTest.cpp   ****     led2.Update();
+ 130              		.loc 7 32 5 is_stmt 1 view .LVU20
+  32:MuxTest.cpp   ****     led2.Update();
+ 131              		.loc 7 32 16 is_stmt 0 view .LVU21
+ 132 0010 1A48     		ldr	r0, .L16+8
+ 133 0012 FFF7FEFF 		bl	_ZN5daisy3Led6UpdateEv
+ 134              	.LVL5:
+  33:MuxTest.cpp   **** 
+ 135              		.loc 7 33 5 is_stmt 1 view .LVU22
+ 136              		.loc 7 36 5 view .LVU23
+ 137              		.loc 7 36 26 is_stmt 0 view .LVU24
+ 138 0016 FFF7FEFF 		bl	_ZN5daisy6System6GetNowEv
+ 139              	.LVL6:
+ 140              		.loc 7 36 29 view .LVU25
+ 141 001a 3A68     		ldr	r2, [r7]
+ 142              		.loc 7 36 54 view .LVU26
+ 143 001c 41F28833 		movw	r3, #5000
+ 144              		.loc 7 36 29 view .LVU27
+ 145 0020 801A     		subs	r0, r0, r2
+ 146              		.loc 7 36 54 view .LVU28
+ 147 0022 9842     		cmp	r0, r3
+ 148 0024 14D8     		bhi	.L15
+ 149              	.L6:
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 9
+
+
+ 150              	.LVL7:
+ 151              	.LBB83:
+  37:MuxTest.cpp   ****     {
+  38:MuxTest.cpp   ****         save_flag = true;
+  39:MuxTest.cpp   ****         timeSinceLast = System::GetNow(); //reset timer
+  40:MuxTest.cpp   ****     }
+  41:MuxTest.cpp   **** 
+  42:MuxTest.cpp   ****     
+  43:MuxTest.cpp   ****     for(size_t i = 0; i < size; i += 2)
+ 152              		.loc 7 43 25 is_stmt 1 discriminator 3 view .LVU29
+ 153 0026 96B1     		cbz	r6, .L4
+ 154 0028 013E     		subs	r6, r6, #1
+ 155              	.LVL8:
+ 156              		.loc 7 43 25 is_stmt 0 discriminator 3 view .LVU30
+ 157 002a 04F10802 		add	r2, r4, #8
+ 158 002e 2046     		mov	r0, r4
+ 159 0030 2946     		mov	r1, r5
+ 160 0032 7608     		lsrs	r6, r6, #1
+ 161              	.LVL9:
+ 162              		.loc 7 43 25 discriminator 3 view .LVU31
+ 163 0034 02EBC602 		add	r2, r2, r6, lsl #3
+ 164              	.LVL10:
+ 165              	.L9:
+  44:MuxTest.cpp   ****     {   
+  45:MuxTest.cpp   ****        out[i] =  in[i];
+ 166              		.loc 7 45 8 is_stmt 1 discriminator 2 view .LVU32
+ 167              		.loc 7 45 22 is_stmt 0 discriminator 2 view .LVU33
+ 168 0038 0368     		ldr	r3, [r0]	@ float
+ 169 003a 0830     		adds	r0, r0, #8
+ 170 003c 0831     		adds	r1, r1, #8
+ 171              		.loc 7 45 15 discriminator 2 view .LVU34
+ 172 003e 41F8083C 		str	r3, [r1, #-8]	@ float
+  46:MuxTest.cpp   ****        out[i+1] = in[i+1];
+ 173              		.loc 7 46 8 is_stmt 1 discriminator 2 view .LVU35
+ 174              		.loc 7 46 25 is_stmt 0 discriminator 2 view .LVU36
+ 175 0042 50F8043C 		ldr	r3, [r0, #-4]	@ float
+  43:MuxTest.cpp   ****     {   
+ 176              		.loc 7 43 25 discriminator 2 view .LVU37
+ 177 0046 9042     		cmp	r0, r2
+ 178              		.loc 7 46 17 discriminator 2 view .LVU38
+ 179 0048 41F8043C 		str	r3, [r1, #-4]	@ float
+  43:MuxTest.cpp   ****     {   
+ 180              		.loc 7 43 5 is_stmt 1 discriminator 2 view .LVU39
+  43:MuxTest.cpp   ****     {   
+ 181              		.loc 7 43 25 discriminator 2 view .LVU40
+ 182 004c F4D1     		bne	.L9
+ 183              	.L4:
+  43:MuxTest.cpp   ****     {   
+ 184              		.loc 7 43 25 is_stmt 0 discriminator 2 view .LVU41
+ 185              	.LBE83:
+  47:MuxTest.cpp   ****     }
+  48:MuxTest.cpp   **** 
+  49:MuxTest.cpp   **** }
+ 186              		.loc 7 49 1 view .LVU42
+ 187 004e F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 188              	.LVL11:
+ 189              	.L15:
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 10
+
+
+ 190              	.LBB84:
+ 191              	.LBI84:
+ 192              		.file 8 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/a
+   1:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** // -*- C++ -*- header.
+   2:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** 
+   3:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** // Copyright (C) 2008-2019 Free Software Foundation, Inc.
+   4:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** //
+   5:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** // This file is part of the GNU ISO C++ Library.  This library is free
+   6:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** // software; you can redistribute it and/or modify it under the
+   7:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** // terms of the GNU General Public License as published by the
+   8:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** // Free Software Foundation; either version 3, or (at your option)
+   9:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** // any later version.
+  10:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** 
+  11:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** // This library is distributed in the hope that it will be useful,
+  12:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
+  13:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  14:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** // GNU General Public License for more details.
+  15:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** 
+  16:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** // Under Section 7 of GPL version 3, you are granted additional
+  17:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** // permissions described in the GCC Runtime Library Exception, version
+  18:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** // 3.1, as published by the Free Software Foundation.
+  19:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** 
+  20:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** // You should have received a copy of the GNU General Public License and
+  21:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** // a copy of the GCC Runtime Library Exception along with this program;
+  22:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** // see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+  23:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** // <http://www.gnu.org/licenses/>.
+  24:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** 
+  25:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** /** @file include/atomic
+  26:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****  *  This is a Standard C++ Library header.
+  27:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****  */
+  28:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** 
+  29:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** // Based on "C++ Atomic Types and Operations" by Hans Boehm and Lawrence Crowl.
+  30:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** // http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2427.html
+  31:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** 
+  32:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** #ifndef _GLIBCXX_ATOMIC
+  33:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** #define _GLIBCXX_ATOMIC 1
+  34:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** 
+  35:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** #pragma GCC system_header
+  36:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** 
+  37:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** #if __cplusplus < 201103L
+  38:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** # include <bits/c++0x_warning.h>
+  39:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** #else
+  40:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** 
+  41:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** #include <bits/atomic_base.h>
+  42:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** #include <bits/move.h>
+  43:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** 
+  44:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** namespace std _GLIBCXX_VISIBILITY(default)
+  45:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** {
+  46:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** _GLIBCXX_BEGIN_NAMESPACE_VERSION
+  47:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** 
+  48:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****   /**
+  49:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****    * @addtogroup atomics
+  50:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****    * @{
+  51:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****    */
+  52:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** 
+  53:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** #if __cplusplus >= 201703L
+  54:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** # define __cpp_lib_atomic_is_always_lock_free 201603
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 11
+
+
+  55:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** #endif
+  56:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** 
+  57:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****   template<typename _Tp>
+  58:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****     struct atomic;
+  59:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** 
+  60:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****   /// atomic<bool>
+  61:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****   // NB: No operators or fetch-operations for this type.
+  62:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****   template<>
+  63:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****   struct atomic<bool>
+  64:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****   {
+  65:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****     using value_type = bool;
+  66:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** 
+  67:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****   private:
+  68:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****     __atomic_base<bool>	_M_base;
+  69:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** 
+  70:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****   public:
+  71:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****     atomic() noexcept = default;
+  72:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****     ~atomic() noexcept = default;
+  73:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****     atomic(const atomic&) = delete;
+  74:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****     atomic& operator=(const atomic&) = delete;
+  75:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****     atomic& operator=(const atomic&) volatile = delete;
+  76:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** 
+  77:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****     constexpr atomic(bool __i) noexcept : _M_base(__i) { }
+  78:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** 
+  79:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****     bool
+  80:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****     operator=(bool __i) noexcept
+  81:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****     { return _M_base.operator=(__i); }
+  82:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** 
+  83:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****     bool
+  84:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****     operator=(bool __i) volatile noexcept
+  85:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****     { return _M_base.operator=(__i); }
+  86:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** 
+  87:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****     operator bool() const noexcept
+ 193              		.loc 8 87 5 is_stmt 1 view .LVU43
+ 194              	.LBE84:
+  88:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****     { return _M_base.load(); }
+ 195              		.loc 8 88 7 view .LVU44
+ 196              	.LBB87:
+ 197              	.LBB85:
+ 198              	.LBI85:
+ 199              		.file 9 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/b
+   1:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** // -*- C++ -*- header.
+   2:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+   3:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** // Copyright (C) 2008-2019 Free Software Foundation, Inc.
+   4:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** //
+   5:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** // This file is part of the GNU ISO C++ Library.  This library is free
+   6:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** // software; you can redistribute it and/or modify it under the
+   7:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** // terms of the GNU General Public License as published by the
+   8:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** // Free Software Foundation; either version 3, or (at your option)
+   9:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** // any later version.
+  10:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+  11:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** // This library is distributed in the hope that it will be useful,
+  12:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
+  13:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  14:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** // GNU General Public License for more details.
+  15:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+  16:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** // Under Section 7 of GPL version 3, you are granted additional
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 12
+
+
+  17:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** // permissions described in the GCC Runtime Library Exception, version
+  18:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** // 3.1, as published by the Free Software Foundation.
+  19:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+  20:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** // You should have received a copy of the GNU General Public License and
+  21:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** // a copy of the GCC Runtime Library Exception along with this program;
+  22:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** // see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+  23:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** // <http://www.gnu.org/licenses/>.
+  24:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+  25:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** /** @file bits/atomic_base.h
+  26:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****  *  This is an internal header file, included by other library headers.
+  27:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****  *  Do not attempt to use it directly. @headername{atomic}
+  28:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****  */
+  29:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+  30:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** #ifndef _GLIBCXX_ATOMIC_BASE_H
+  31:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** #define _GLIBCXX_ATOMIC_BASE_H 1
+  32:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+  33:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** #pragma GCC system_header
+  34:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+  35:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** #include <bits/c++config.h>
+  36:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** #include <stdint.h>
+  37:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** #include <bits/atomic_lockfree_defines.h>
+  38:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+  39:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** #ifndef _GLIBCXX_ALWAYS_INLINE
+  40:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** #define _GLIBCXX_ALWAYS_INLINE inline __attribute__((__always_inline__))
+  41:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** #endif
+  42:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+  43:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** namespace std _GLIBCXX_VISIBILITY(default)
+  44:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** {
+  45:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** _GLIBCXX_BEGIN_NAMESPACE_VERSION
+  46:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+  47:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   /**
+  48:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****    * @defgroup atomics Atomics
+  49:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****    *
+  50:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****    * Components for performing atomic operations.
+  51:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****    * @{
+  52:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****    */
+  53:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+  54:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   /// Enumeration for memory_order
+  55:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** #if __cplusplus > 201703L
+  56:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   enum class memory_order : int
+  57:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     {
+  58:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       relaxed,
+  59:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       consume,
+  60:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       acquire,
+  61:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       release,
+  62:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       acq_rel,
+  63:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       seq_cst
+  64:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     };
+  65:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+  66:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   inline constexpr memory_order memory_order_relaxed = memory_order::relaxed;
+  67:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   inline constexpr memory_order memory_order_consume = memory_order::consume;
+  68:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   inline constexpr memory_order memory_order_acquire = memory_order::acquire;
+  69:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   inline constexpr memory_order memory_order_release = memory_order::release;
+  70:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   inline constexpr memory_order memory_order_acq_rel = memory_order::acq_rel;
+  71:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   inline constexpr memory_order memory_order_seq_cst = memory_order::seq_cst;
+  72:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** #else
+  73:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   typedef enum memory_order
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 13
+
+
+  74:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     {
+  75:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       memory_order_relaxed,
+  76:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       memory_order_consume,
+  77:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       memory_order_acquire,
+  78:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       memory_order_release,
+  79:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       memory_order_acq_rel,
+  80:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       memory_order_seq_cst
+  81:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     } memory_order;
+  82:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** #endif
+  83:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+  84:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   enum __memory_order_modifier
+  85:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     {
+  86:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __memory_order_mask          = 0x0ffff,
+  87:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __memory_order_modifier_mask = 0xffff0000,
+  88:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __memory_order_hle_acquire   = 0x10000,
+  89:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __memory_order_hle_release   = 0x20000
+  90:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     };
+  91:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+  92:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   constexpr memory_order
+  93:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   operator|(memory_order __m, __memory_order_modifier __mod)
+  94:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   {
+  95:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     return memory_order(int(__m) | int(__mod));
+  96:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   }
+  97:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+  98:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   constexpr memory_order
+  99:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   operator&(memory_order __m, __memory_order_modifier __mod)
+ 100:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   {
+ 101:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     return memory_order(int(__m) & int(__mod));
+ 102:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   }
+ 103:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 104:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   // Drop release ordering as per [atomics.types.operations.req]/21
+ 105:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   constexpr memory_order
+ 106:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   __cmpexch_failure_order2(memory_order __m) noexcept
+ 107:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   {
+ 108:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     return __m == memory_order_acq_rel ? memory_order_acquire
+ 109:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       : __m == memory_order_release ? memory_order_relaxed : __m;
+ 110:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   }
+ 111:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 112:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   constexpr memory_order
+ 113:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   __cmpexch_failure_order(memory_order __m) noexcept
+ 114:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   {
+ 115:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     return memory_order(__cmpexch_failure_order2(__m & __memory_order_mask)
+ 116:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       | __memory_order_modifier(__m & __memory_order_modifier_mask));
+ 117:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   }
+ 118:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 119:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   _GLIBCXX_ALWAYS_INLINE void
+ 120:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   atomic_thread_fence(memory_order __m) noexcept
+ 121:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   { __atomic_thread_fence(int(__m)); }
+ 122:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 123:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   _GLIBCXX_ALWAYS_INLINE void
+ 124:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   atomic_signal_fence(memory_order __m) noexcept
+ 125:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   { __atomic_signal_fence(int(__m)); }
+ 126:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 127:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   /// kill_dependency
+ 128:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   template<typename _Tp>
+ 129:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     inline _Tp
+ 130:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     kill_dependency(_Tp __y) noexcept
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 14
+
+
+ 131:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     {
+ 132:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       _Tp __ret(__y);
+ 133:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       return __ret;
+ 134:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     }
+ 135:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 136:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 137:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   // Base types for atomics.
+ 138:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   template<typename _IntTp>
+ 139:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     struct __atomic_base;
+ 140:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 141:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 142:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** #define ATOMIC_VAR_INIT(_VI) { _VI }
+ 143:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 144:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   template<typename _Tp>
+ 145:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     struct atomic;
+ 146:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 147:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   template<typename _Tp>
+ 148:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     struct atomic<_Tp*>;
+ 149:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 150:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     /* The target's "set" value for test-and-set may not be exactly 1.  */
+ 151:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** #if __GCC_ATOMIC_TEST_AND_SET_TRUEVAL == 1
+ 152:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     typedef bool __atomic_flag_data_type;
+ 153:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** #else
+ 154:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     typedef unsigned char __atomic_flag_data_type;
+ 155:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** #endif
+ 156:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 157:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   /**
+ 158:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****    *  @brief Base type for atomic_flag.
+ 159:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****    *
+ 160:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****    *  Base type is POD with data, allowing atomic_flag to derive from
+ 161:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****    *  it and meet the standard layout type requirement. In addition to
+ 162:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****    *  compatibility with a C interface, this allows different
+ 163:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****    *  implementations of atomic_flag to use the same atomic operation
+ 164:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****    *  functions, via a standard conversion to the __atomic_flag_base
+ 165:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****    *  argument.
+ 166:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   */
+ 167:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   _GLIBCXX_BEGIN_EXTERN_C
+ 168:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 169:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   struct __atomic_flag_base
+ 170:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   {
+ 171:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     __atomic_flag_data_type _M_i;
+ 172:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   };
+ 173:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 174:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   _GLIBCXX_END_EXTERN_C
+ 175:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 176:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** #define ATOMIC_FLAG_INIT { 0 }
+ 177:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 178:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   /// atomic_flag
+ 179:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   struct atomic_flag : public __atomic_flag_base
+ 180:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   {
+ 181:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     atomic_flag() noexcept = default;
+ 182:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     ~atomic_flag() noexcept = default;
+ 183:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     atomic_flag(const atomic_flag&) = delete;
+ 184:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     atomic_flag& operator=(const atomic_flag&) = delete;
+ 185:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     atomic_flag& operator=(const atomic_flag&) volatile = delete;
+ 186:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 187:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     // Conversion to ATOMIC_FLAG_INIT.
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 15
+
+
+ 188:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     constexpr atomic_flag(bool __i) noexcept
+ 189:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       : __atomic_flag_base{ _S_init(__i) }
+ 190:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     { }
+ 191:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 192:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     _GLIBCXX_ALWAYS_INLINE bool
+ 193:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     test_and_set(memory_order __m = memory_order_seq_cst) noexcept
+ 194:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     {
+ 195:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       return __atomic_test_and_set (&_M_i, int(__m));
+ 196:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     }
+ 197:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 198:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     _GLIBCXX_ALWAYS_INLINE bool
+ 199:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     test_and_set(memory_order __m = memory_order_seq_cst) volatile noexcept
+ 200:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     {
+ 201:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       return __atomic_test_and_set (&_M_i, int(__m));
+ 202:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     }
+ 203:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 204:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     _GLIBCXX_ALWAYS_INLINE void
+ 205:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     clear(memory_order __m = memory_order_seq_cst) noexcept
+ 206:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     {
+ 207:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       memory_order __b = __m & __memory_order_mask;
+ 208:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __glibcxx_assert(__b != memory_order_consume);
+ 209:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __glibcxx_assert(__b != memory_order_acquire);
+ 210:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __glibcxx_assert(__b != memory_order_acq_rel);
+ 211:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 212:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __atomic_clear (&_M_i, int(__m));
+ 213:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     }
+ 214:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 215:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     _GLIBCXX_ALWAYS_INLINE void
+ 216:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     clear(memory_order __m = memory_order_seq_cst) volatile noexcept
+ 217:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     {
+ 218:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       memory_order __b = __m & __memory_order_mask;
+ 219:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __glibcxx_assert(__b != memory_order_consume);
+ 220:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __glibcxx_assert(__b != memory_order_acquire);
+ 221:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __glibcxx_assert(__b != memory_order_acq_rel);
+ 222:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 223:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __atomic_clear (&_M_i, int(__m));
+ 224:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     }
+ 225:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 226:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   private:
+ 227:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     static constexpr __atomic_flag_data_type
+ 228:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     _S_init(bool __i)
+ 229:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     { return __i ? __GCC_ATOMIC_TEST_AND_SET_TRUEVAL : 0; }
+ 230:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   };
+ 231:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 232:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 233:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   /// Base class for atomic integrals.
+ 234:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   //
+ 235:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   // For each of the integral types, define atomic_[integral type] struct
+ 236:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   //
+ 237:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   // atomic_bool     bool
+ 238:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   // atomic_char     char
+ 239:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   // atomic_schar    signed char
+ 240:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   // atomic_uchar    unsigned char
+ 241:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   // atomic_short    short
+ 242:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   // atomic_ushort   unsigned short
+ 243:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   // atomic_int      int
+ 244:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   // atomic_uint     unsigned int
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 16
+
+
+ 245:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   // atomic_long     long
+ 246:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   // atomic_ulong    unsigned long
+ 247:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   // atomic_llong    long long
+ 248:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   // atomic_ullong   unsigned long long
+ 249:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   // atomic_char8_t  char8_t
+ 250:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   // atomic_char16_t char16_t
+ 251:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   // atomic_char32_t char32_t
+ 252:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   // atomic_wchar_t  wchar_t
+ 253:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   //
+ 254:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   // NB: Assuming _ITp is an integral scalar type that is 1, 2, 4, or
+ 255:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   // 8 bytes, since that is what GCC built-in functions for atomic
+ 256:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   // memory access expect.
+ 257:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****   template<typename _ITp>
+ 258:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     struct __atomic_base
+ 259:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     {
+ 260:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       using value_type = _ITp;
+ 261:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       using difference_type = value_type;
+ 262:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 263:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     private:
+ 264:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       typedef _ITp 	__int_type;
+ 265:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 266:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       static constexpr int _S_alignment =
+ 267:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 	sizeof(_ITp) > alignof(_ITp) ? sizeof(_ITp) : alignof(_ITp);
+ 268:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 269:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       alignas(_S_alignment) __int_type _M_i;
+ 270:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 271:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****     public:
+ 272:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __atomic_base() noexcept = default;
+ 273:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       ~__atomic_base() noexcept = default;
+ 274:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __atomic_base(const __atomic_base&) = delete;
+ 275:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __atomic_base& operator=(const __atomic_base&) = delete;
+ 276:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __atomic_base& operator=(const __atomic_base&) volatile = delete;
+ 277:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 278:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       // Requires __int_type convertible to _M_i.
+ 279:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       constexpr __atomic_base(__int_type __i) noexcept : _M_i (__i) { }
+ 280:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 281:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       operator __int_type() const noexcept
+ 282:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       { return load(); }
+ 283:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 284:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       operator __int_type() const volatile noexcept
+ 285:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       { return load(); }
+ 286:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 287:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __int_type
+ 288:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       operator=(__int_type __i) noexcept
+ 289:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       {
+ 290:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 	store(__i);
+ 291:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 	return __i;
+ 292:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       }
+ 293:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 294:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __int_type
+ 295:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       operator=(__int_type __i) volatile noexcept
+ 296:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       {
+ 297:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 	store(__i);
+ 298:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 	return __i;
+ 299:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       }
+ 300:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 301:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __int_type
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 17
+
+
+ 302:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       operator++(int) noexcept
+ 303:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       { return fetch_add(1); }
+ 304:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 305:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __int_type
+ 306:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       operator++(int) volatile noexcept
+ 307:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       { return fetch_add(1); }
+ 308:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 309:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __int_type
+ 310:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       operator--(int) noexcept
+ 311:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       { return fetch_sub(1); }
+ 312:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 313:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __int_type
+ 314:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       operator--(int) volatile noexcept
+ 315:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       { return fetch_sub(1); }
+ 316:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 317:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __int_type
+ 318:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       operator++() noexcept
+ 319:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       { return __atomic_add_fetch(&_M_i, 1, int(memory_order_seq_cst)); }
+ 320:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 321:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __int_type
+ 322:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       operator++() volatile noexcept
+ 323:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       { return __atomic_add_fetch(&_M_i, 1, int(memory_order_seq_cst)); }
+ 324:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 325:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __int_type
+ 326:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       operator--() noexcept
+ 327:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       { return __atomic_sub_fetch(&_M_i, 1, int(memory_order_seq_cst)); }
+ 328:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 329:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __int_type
+ 330:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       operator--() volatile noexcept
+ 331:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       { return __atomic_sub_fetch(&_M_i, 1, int(memory_order_seq_cst)); }
+ 332:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 333:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __int_type
+ 334:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       operator+=(__int_type __i) noexcept
+ 335:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       { return __atomic_add_fetch(&_M_i, __i, int(memory_order_seq_cst)); }
+ 336:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 337:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __int_type
+ 338:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       operator+=(__int_type __i) volatile noexcept
+ 339:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       { return __atomic_add_fetch(&_M_i, __i, int(memory_order_seq_cst)); }
+ 340:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 341:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __int_type
+ 342:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       operator-=(__int_type __i) noexcept
+ 343:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       { return __atomic_sub_fetch(&_M_i, __i, int(memory_order_seq_cst)); }
+ 344:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 345:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __int_type
+ 346:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       operator-=(__int_type __i) volatile noexcept
+ 347:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       { return __atomic_sub_fetch(&_M_i, __i, int(memory_order_seq_cst)); }
+ 348:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 349:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __int_type
+ 350:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       operator&=(__int_type __i) noexcept
+ 351:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       { return __atomic_and_fetch(&_M_i, __i, int(memory_order_seq_cst)); }
+ 352:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 353:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __int_type
+ 354:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       operator&=(__int_type __i) volatile noexcept
+ 355:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       { return __atomic_and_fetch(&_M_i, __i, int(memory_order_seq_cst)); }
+ 356:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 357:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __int_type
+ 358:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       operator|=(__int_type __i) noexcept
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 18
+
+
+ 359:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       { return __atomic_or_fetch(&_M_i, __i, int(memory_order_seq_cst)); }
+ 360:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 361:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __int_type
+ 362:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       operator|=(__int_type __i) volatile noexcept
+ 363:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       { return __atomic_or_fetch(&_M_i, __i, int(memory_order_seq_cst)); }
+ 364:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 365:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __int_type
+ 366:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       operator^=(__int_type __i) noexcept
+ 367:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       { return __atomic_xor_fetch(&_M_i, __i, int(memory_order_seq_cst)); }
+ 368:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 369:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       __int_type
+ 370:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       operator^=(__int_type __i) volatile noexcept
+ 371:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       { return __atomic_xor_fetch(&_M_i, __i, int(memory_order_seq_cst)); }
+ 372:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 373:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       bool
+ 374:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       is_lock_free() const noexcept
+ 375:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       {
+ 376:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 	// Use a fake, minimally aligned pointer.
+ 377:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 	return __atomic_is_lock_free(sizeof(_M_i),
+ 378:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 	    reinterpret_cast<void *>(-_S_alignment));
+ 379:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       }
+ 380:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 381:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       bool
+ 382:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       is_lock_free() const volatile noexcept
+ 383:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       {
+ 384:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 	// Use a fake, minimally aligned pointer.
+ 385:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 	return __atomic_is_lock_free(sizeof(_M_i),
+ 386:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 	    reinterpret_cast<void *>(-_S_alignment));
+ 387:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       }
+ 388:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 389:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       _GLIBCXX_ALWAYS_INLINE void
+ 390:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       store(__int_type __i, memory_order __m = memory_order_seq_cst) noexcept
+ 391:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       {
+ 392:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 	memory_order __b = __m & __memory_order_mask;
+ 393:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 	__glibcxx_assert(__b != memory_order_acquire);
+ 394:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 	__glibcxx_assert(__b != memory_order_acq_rel);
+ 395:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 	__glibcxx_assert(__b != memory_order_consume);
+ 396:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 397:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 	__atomic_store_n(&_M_i, __i, int(__m));
+ 398:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       }
+ 399:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 400:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       _GLIBCXX_ALWAYS_INLINE void
+ 401:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       store(__int_type __i,
+ 402:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 	    memory_order __m = memory_order_seq_cst) volatile noexcept
+ 403:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       {
+ 404:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 	memory_order __b = __m & __memory_order_mask;
+ 405:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 	__glibcxx_assert(__b != memory_order_acquire);
+ 406:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 	__glibcxx_assert(__b != memory_order_acq_rel);
+ 407:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 	__glibcxx_assert(__b != memory_order_consume);
+ 408:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 409:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 	__atomic_store_n(&_M_i, __i, int(__m));
+ 410:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       }
+ 411:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 412:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       _GLIBCXX_ALWAYS_INLINE __int_type
+ 413:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       load(memory_order __m = memory_order_seq_cst) const noexcept
+ 200              		.loc 9 413 7 view .LVU45
+ 201              	.LBB86:
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 19
+
+
+ 414:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       {
+ 415:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 	memory_order __b = __m & __memory_order_mask;
+ 416:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 	__glibcxx_assert(__b != memory_order_release);
+ 417:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 	__glibcxx_assert(__b != memory_order_acq_rel);
+ 418:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 
+ 419:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h **** 	return __atomic_load_n(&_M_i, int(__m));
+ 202              		.loc 9 419 24 is_stmt 0 view .LVU46
+ 203 0050 0B4B     		ldr	r3, .L16+12
+ 204 0052 BFF35B8F 		dmb	ish
+ 205 0056 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 206 0058 BFF35B8F 		dmb	ish
+ 207              	.LBE86:
+ 208              	.LBE85:
+ 209              	.LBE87:
+  36:MuxTest.cpp   ****     {
+ 210              		.loc 7 36 54 view .LVU47
+ 211 005c 002A     		cmp	r2, #0
+ 212 005e E2D1     		bne	.L6
+  38:MuxTest.cpp   ****         timeSinceLast = System::GetNow(); //reset timer
+ 213              		.loc 7 38 9 is_stmt 1 view .LVU48
+ 214              	.LVL12:
+ 215              	.LBB88:
+ 216              	.LBI88:
+  80:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****     { return _M_base.operator=(__i); }
+ 217              		.loc 8 80 5 view .LVU49
+ 218              	.LBE88:
+  81:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** 
+ 219              		.loc 8 81 7 view .LVU50
+ 220              	.LBB92:
+ 221              	.LBB89:
+ 222              	.LBI89:
+ 288:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       {
+ 223              		.loc 9 288 7 view .LVU51
+ 224              	.LBB90:
+ 225              	.LBI90:
+ 390:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       {
+ 226              		.loc 9 390 7 view .LVU52
+ 227              	.LBB91:
+ 397:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       }
+ 228              		.loc 9 397 18 is_stmt 0 view .LVU53
+ 229 0060 0122     		movs	r2, #1
+ 230 0062 BFF35B8F 		dmb	ish
+ 231 0066 1A70     		strb	r2, [r3]
+ 232 0068 BFF35B8F 		dmb	ish
+ 233              	.LVL13:
+ 397:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       }
+ 234              		.loc 9 397 18 view .LVU54
+ 235              	.LBE91:
+ 236              	.LBE90:
+ 237              	.LBE89:
+ 238              	.LBE92:
+  39:MuxTest.cpp   ****     }
+ 239              		.loc 7 39 9 is_stmt 1 view .LVU55
+  39:MuxTest.cpp   ****     }
+ 240              		.loc 7 39 39 is_stmt 0 view .LVU56
+ 241 006c FFF7FEFF 		bl	_ZN5daisy6System6GetNowEv
+ 242              	.LVL14:
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 20
+
+
+  39:MuxTest.cpp   ****     }
+ 243              		.loc 7 39 23 view .LVU57
+ 244 0070 3860     		str	r0, [r7]
+ 245 0072 D8E7     		b	.L6
+ 246              	.L17:
+ 247              		.align	2
+ 248              	.L16:
+ 249 0074 00000000 		.word	.LANCHOR2
+ 250 0078 00000000 		.word	.LANCHOR0
+ 251 007c 00000000 		.word	.LANCHOR1
+ 252 0080 00000000 		.word	.LANCHOR3
+ 253              		.cfi_endproc
+ 254              	.LFE3910:
+ 256              		.section	.text.startup.main,"ax",%progbits
+ 257              		.align	1
+ 258              		.p2align 2,,3
+ 259              		.global	main
+ 260              		.syntax unified
+ 261              		.thumb
+ 262              		.thumb_func
+ 263              		.fpu fpv5-d16
+ 265              	main:
+ 266              	.LFB3911:
+  50:MuxTest.cpp   **** 
+  51:MuxTest.cpp   **** int main(void)
+  52:MuxTest.cpp   **** {
+ 267              		.loc 7 52 1 is_stmt 1 view -0
+ 268              		.cfi_startproc
+ 269              		@ Volatile: function does not return.
+ 270              		@ args = 0, pretend = 0, frame = 224
+ 271              		@ frame_needed = 0, uses_anonymous_args = 0
+  53:MuxTest.cpp   ****     hw.Configure();
+ 272              		.loc 7 53 5 view .LVU59
+  52:MuxTest.cpp   ****     hw.Configure();
+ 273              		.loc 7 52 1 is_stmt 0 view .LVU60
+ 274 0000 2DE98048 		push	{r7, fp, lr}
+ 275              		.cfi_def_cfa_offset 12
+ 276              		.cfi_offset 7, -12
+ 277              		.cfi_offset 11, -8
+ 278              		.cfi_offset 14, -4
+ 279              		.loc 7 53 17 view .LVU61
+ 280 0004 A648     		ldr	r0, .L26
+  52:MuxTest.cpp   ****     hw.Configure();
+ 281              		.loc 7 52 1 view .LVU62
+ 282 0006 BBB0     		sub	sp, sp, #236
+ 283              		.cfi_def_cfa_offset 248
+ 284              		.loc 7 53 17 view .LVU63
+ 285 0008 FFF7FEFF 		bl	_ZN5daisy9DaisySeed9ConfigureEv
+ 286              	.LVL15:
+  54:MuxTest.cpp   ****     hw.Init();
+ 287              		.loc 7 54 5 is_stmt 1 view .LVU64
+ 288              		.loc 7 54 12 is_stmt 0 view .LVU65
+ 289 000c 0021     		movs	r1, #0
+ 290 000e A448     		ldr	r0, .L26
+ 291 0010 FFF7FEFF 		bl	_ZN5daisy9DaisySeed4InitEb
+ 292              	.LVL16:
+  55:MuxTest.cpp   ****     led1.Init(hw.GetPin(24), false, hw.AudioSampleRate());
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 21
+
+
+ 293              		.loc 7 55 5 is_stmt 1 view .LVU66
+ 294              		.loc 7 55 14 is_stmt 0 view .LVU67
+ 295 0014 1821     		movs	r1, #24
+ 296 0016 A248     		ldr	r0, .L26
+ 297 0018 FFF7FEFF 		bl	_ZN5daisy9DaisySeed6GetPinEh
+ 298              	.LVL17:
+ 299 001c 0346     		mov	r3, r0	@ movhi
+ 300 001e A048     		ldr	r0, .L26
+ 301 0020 ADF80C30 		strh	r3, [sp, #12]	@ movhi
+ 302 0024 FFF7FEFF 		bl	_ZN5daisy9DaisySeed15AudioSampleRateEv
+ 303              	.LVL18:
+ 304 0028 0022     		movs	r2, #0
+ 305 002a 0399     		ldr	r1, [sp, #12]
+ 306 002c 9D48     		ldr	r0, .L26+4
+ 307 002e FFF7FEFF 		bl	_ZN5daisy3Led4InitE12dsy_gpio_pinbf
+ 308              	.LVL19:
+  56:MuxTest.cpp   ****     led2.Init(hw.GetPin(10),false, hw.AudioSampleRate());
+ 309              		.loc 7 56 5 is_stmt 1 view .LVU68
+ 310              		.loc 7 56 14 is_stmt 0 view .LVU69
+ 311 0032 0A21     		movs	r1, #10
+ 312 0034 9A48     		ldr	r0, .L26
+ 313 0036 FFF7FEFF 		bl	_ZN5daisy9DaisySeed6GetPinEh
+ 314              	.LVL20:
+ 315 003a 0346     		mov	r3, r0	@ movhi
+ 316 003c 9848     		ldr	r0, .L26
+ 317 003e ADF81030 		strh	r3, [sp, #16]	@ movhi
+ 318 0042 FFF7FEFF 		bl	_ZN5daisy9DaisySeed15AudioSampleRateEv
+ 319              	.LVL21:
+ 320 0046 0022     		movs	r2, #0
+ 321 0048 0499     		ldr	r1, [sp, #16]
+ 322 004a 9748     		ldr	r0, .L26+8
+ 323 004c FFF7FEFF 		bl	_ZN5daisy3Led4InitE12dsy_gpio_pinbf
+ 324              	.LVL22:
+  57:MuxTest.cpp   **** 
+  58:MuxTest.cpp   ****     Settings setting2{LoadSettings()};
+ 325              		.loc 7 58 5 is_stmt 1 view .LVU70
+ 326              		.loc 7 58 36 is_stmt 0 view .LVU71
+ 327 0050 10A8     		add	r0, sp, #64
+ 328 0052 FFF7FEFF 		bl	_Z12LoadSettingsv
+ 329              	.LVL23:
+  59:MuxTest.cpp   ****     led2.Set(setting2.FilterPrePost);
+ 330              		.loc 7 59 5 is_stmt 1 view .LVU72
+ 331              		.loc 7 59 13 is_stmt 0 view .LVU73
+ 332 0056 9DED170A 		vldr.32	s0, [sp, #92]
+ 333 005a 9348     		ldr	r0, .L26+8
+ 334 005c FFF7FEFF 		bl	_ZN5daisy3Led3SetEf
+ 335              	.LVL24:
+  60:MuxTest.cpp   ****     
+  61:MuxTest.cpp   ****     AdcChannelConfig adcConfig[8];
+ 336              		.loc 7 61 5 is_stmt 1 view .LVU74
+  62:MuxTest.cpp   **** 
+  63:MuxTest.cpp   **** //CV inputs
+  64:MuxTest.cpp   ****     adcConfig[0].InitSingle(hw.GetPin(15));
+ 337              		.loc 7 64 5 view .LVU75
+ 338              		.loc 7 64 28 is_stmt 0 view .LVU76
+ 339 0060 0F21     		movs	r1, #15
+ 340 0062 8F48     		ldr	r0, .L26
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 22
+
+
+ 341 0064 FFF7FEFF 		bl	_ZN5daisy9DaisySeed6GetPinEh
+ 342              	.LVL25:
+ 343 0068 0346     		mov	r3, r0	@ movhi
+ 344 006a 18A8     		add	r0, sp, #96
+ 345 006c 8F4C     		ldr	r4, .L26+12
+ 346 006e ADF81430 		strh	r3, [sp, #20]	@ movhi
+ 347 0072 0599     		ldr	r1, [sp, #20]
+ 348 0074 FFF7FEFF 		bl	_ZN5daisy16AdcChannelConfig10InitSingleE12dsy_gpio_pin
+ 349              	.LVL26:
+  65:MuxTest.cpp   ****     adcConfig[1].InitSingle(hw.GetPin(16));
+ 350              		.loc 7 65 5 is_stmt 1 view .LVU77
+ 351              		.loc 7 65 28 is_stmt 0 view .LVU78
+ 352 0078 1021     		movs	r1, #16
+ 353 007a 8948     		ldr	r0, .L26
+ 354 007c FFF7FEFF 		bl	_ZN5daisy9DaisySeed6GetPinEh
+ 355              	.LVL27:
+ 356 0080 0346     		mov	r3, r0	@ movhi
+ 357 0082 0DF17100 		add	r0, sp, #113
+ 358 0086 DFF860B2 		ldr	fp, .L26+72
+ 359 008a ADF81830 		strh	r3, [sp, #24]	@ movhi
+ 360 008e 0699     		ldr	r1, [sp, #24]
+ 361 0090 FFF7FEFF 		bl	_ZN5daisy16AdcChannelConfig10InitSingleE12dsy_gpio_pin
+ 362              	.LVL28:
+  66:MuxTest.cpp   ****     adcConfig[2].InitSingle(hw.GetPin(17));
+ 363              		.loc 7 66 5 is_stmt 1 view .LVU79
+ 364              		.loc 7 66 28 is_stmt 0 view .LVU80
+ 365 0094 1121     		movs	r1, #17
+ 366 0096 8248     		ldr	r0, .L26
+ 367 0098 FFF7FEFF 		bl	_ZN5daisy9DaisySeed6GetPinEh
+ 368              	.LVL29:
+ 369 009c 0346     		mov	r3, r0	@ movhi
+ 370 009e 0DF18200 		add	r0, sp, #130
+ 371 00a2 DFF848A2 		ldr	r10, .L26+76
+ 372 00a6 ADF81C30 		strh	r3, [sp, #28]	@ movhi
+ 373 00aa 0799     		ldr	r1, [sp, #28]
+ 374 00ac FFF7FEFF 		bl	_ZN5daisy16AdcChannelConfig10InitSingleE12dsy_gpio_pin
+ 375              	.LVL30:
+  67:MuxTest.cpp   ****     adcConfig[3].InitSingle(hw.GetPin(18));
+ 376              		.loc 7 67 5 is_stmt 1 view .LVU81
+ 377              		.loc 7 67 28 is_stmt 0 view .LVU82
+ 378 00b0 1221     		movs	r1, #18
+ 379 00b2 7B48     		ldr	r0, .L26
+ 380 00b4 FFF7FEFF 		bl	_ZN5daisy9DaisySeed6GetPinEh
+ 381              	.LVL31:
+ 382 00b8 0346     		mov	r3, r0	@ movhi
+ 383 00ba 0DF19300 		add	r0, sp, #147
+ 384 00be DFF83092 		ldr	r9, .L26+80
+ 385 00c2 ADF82030 		strh	r3, [sp, #32]	@ movhi
+ 386 00c6 0899     		ldr	r1, [sp, #32]
+ 387 00c8 FFF7FEFF 		bl	_ZN5daisy16AdcChannelConfig10InitSingleE12dsy_gpio_pin
+ 388              	.LVL32:
+  68:MuxTest.cpp   ****     adcConfig[4].InitSingle(hw.GetPin(19));
+ 389              		.loc 7 68 5 is_stmt 1 view .LVU83
+ 390              		.loc 7 68 28 is_stmt 0 view .LVU84
+ 391 00cc 1321     		movs	r1, #19
+ 392 00ce 7448     		ldr	r0, .L26
+ 393 00d0 FFF7FEFF 		bl	_ZN5daisy9DaisySeed6GetPinEh
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 23
+
+
+ 394              	.LVL33:
+ 395 00d4 0346     		mov	r3, r0	@ movhi
+ 396 00d6 29A8     		add	r0, sp, #164
+ 397 00d8 DFF81882 		ldr	r8, .L26+84
+ 398 00dc ADF82430 		strh	r3, [sp, #36]	@ movhi
+ 399 00e0 0999     		ldr	r1, [sp, #36]
+ 400 00e2 FFF7FEFF 		bl	_ZN5daisy16AdcChannelConfig10InitSingleE12dsy_gpio_pin
+ 401              	.LVL34:
+  69:MuxTest.cpp   ****     adcConfig[5].InitSingle(hw.GetPin(20));
+ 402              		.loc 7 69 5 is_stmt 1 view .LVU85
+ 403              		.loc 7 69 28 is_stmt 0 view .LVU86
+ 404 00e6 1421     		movs	r1, #20
+ 405 00e8 6D48     		ldr	r0, .L26
+ 406 00ea FFF7FEFF 		bl	_ZN5daisy9DaisySeed6GetPinEh
+ 407              	.LVL35:
+ 408 00ee 0346     		mov	r3, r0	@ movhi
+ 409 00f0 0DF1B500 		add	r0, sp, #181
+ 410 00f4 6E4F     		ldr	r7, .L26+16
+ 411 00f6 ADF82830 		strh	r3, [sp, #40]	@ movhi
+ 412 00fa 0A99     		ldr	r1, [sp, #40]
+ 413 00fc FFF7FEFF 		bl	_ZN5daisy16AdcChannelConfig10InitSingleE12dsy_gpio_pin
+ 414              	.LVL36:
+  70:MuxTest.cpp   ****     adcConfig[6].InitSingle(hw.GetPin(22));
+ 415              		.loc 7 70 5 is_stmt 1 view .LVU87
+ 416              		.loc 7 70 28 is_stmt 0 view .LVU88
+ 417 0100 1621     		movs	r1, #22
+ 418 0102 6748     		ldr	r0, .L26
+ 419 0104 FFF7FEFF 		bl	_ZN5daisy9DaisySeed6GetPinEh
+ 420              	.LVL37:
+ 421 0108 0346     		mov	r3, r0	@ movhi
+ 422 010a 0DF1C600 		add	r0, sp, #198
+ 423 010e 694E     		ldr	r6, .L26+20
+ 424 0110 ADF82C30 		strh	r3, [sp, #44]	@ movhi
+ 425 0114 0B99     		ldr	r1, [sp, #44]
+ 426 0116 FFF7FEFF 		bl	_ZN5daisy16AdcChannelConfig10InitSingleE12dsy_gpio_pin
+ 427              	.LVL38:
+  71:MuxTest.cpp   **** 
+  72:MuxTest.cpp   **** //Muxed pot inputs
+  73:MuxTest.cpp   ****     adcConfig[7].InitMux(hw.GetPin(25),8,hw.GetPin(14),hw.GetPin(13),hw.GetPin(12));
+ 428              		.loc 7 73 5 is_stmt 1 view .LVU89
+ 429              		.loc 7 73 25 is_stmt 0 view .LVU90
+ 430 011a 1921     		movs	r1, #25
+ 431 011c 6048     		ldr	r0, .L26
+ 432 011e FFF7FEFF 		bl	_ZN5daisy9DaisySeed6GetPinEh
+ 433              	.LVL39:
+ 434 0122 0346     		mov	r3, r0	@ movhi
+ 435 0124 0E21     		movs	r1, #14
+ 436 0126 5E48     		ldr	r0, .L26
+ 437 0128 ADF83030 		strh	r3, [sp, #48]	@ movhi
+ 438 012c FFF7FEFF 		bl	_ZN5daisy9DaisySeed6GetPinEh
+ 439              	.LVL40:
+ 440 0130 0346     		mov	r3, r0	@ movhi
+ 441 0132 0D21     		movs	r1, #13
+ 442 0134 5A48     		ldr	r0, .L26
+ 443 0136 ADF83430 		strh	r3, [sp, #52]	@ movhi
+ 444 013a FFF7FEFF 		bl	_ZN5daisy9DaisySeed6GetPinEh
+ 445              	.LVL41:
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 24
+
+
+ 446 013e 0346     		mov	r3, r0	@ movhi
+ 447 0140 0C21     		movs	r1, #12
+ 448 0142 5748     		ldr	r0, .L26
+ 449 0144 ADF83830 		strh	r3, [sp, #56]	@ movhi
+ 450 0148 FFF7FEFF 		bl	_ZN5daisy9DaisySeed6GetPinEh
+ 451              	.LVL42:
+ 452 014c BDF83810 		ldrh	r1, [sp, #56]
+ 453 0150 0546     		mov	r5, r0	@ movhi
+ 454 0152 0D9B     		ldr	r3, [sp, #52]
+ 455 0154 0822     		movs	r2, #8
+ 456 0156 0DF1D700 		add	r0, sp, #215
+ 457 015a ADF80010 		strh	r1, [sp]	@ movhi
+ 458 015e ADF80450 		strh	r5, [sp, #4]	@ movhi
+ 459 0162 0C99     		ldr	r1, [sp, #48]
+ 460 0164 ADF83C50 		strh	r5, [sp, #60]	@ movhi
+ 461 0168 FFF7FEFF 		bl	_ZN5daisy16AdcChannelConfig7InitMuxE12dsy_gpio_pinjS1_S1_S1_
+ 462              	.LVL43:
+  74:MuxTest.cpp   **** 
+  75:MuxTest.cpp   ****     hw.adc.Init(adcConfig, 8);
+ 463              		.loc 7 75 5 is_stmt 1 view .LVU91
+ 464              		.loc 7 75 16 is_stmt 0 view .LVU92
+ 465 016c 0423     		movs	r3, #4
+ 466 016e 0822     		movs	r2, #8
+ 467 0170 18A9     		add	r1, sp, #96
+ 468 0172 5148     		ldr	r0, .L26+24
+ 469 0174 FFF7FEFF 		bl	_ZN5daisy9AdcHandle4InitEPNS_16AdcChannelConfigEjNS0_12OverSamplingE
+ 470              	.LVL44:
+  76:MuxTest.cpp   ****     hw.adc.Start();
+ 471              		.loc 7 76 5 is_stmt 1 view .LVU93
+ 472              		.loc 7 76 17 is_stmt 0 view .LVU94
+ 473 0178 4F48     		ldr	r0, .L26+24
+ 474 017a FFF7FEFF 		bl	_ZN5daisy9AdcHandle5StartEv
+ 475              	.LVL45:
+  77:MuxTest.cpp   **** 
+  78:MuxTest.cpp   ****     hw.SetAudioBlockSize(1);     //set blocksize.
+ 476              		.loc 7 78 5 is_stmt 1 view .LVU95
+ 477 017e 4F4D     		ldr	r5, .L26+28
+ 478              		.loc 7 78 25 is_stmt 0 view .LVU96
+ 479 0180 0121     		movs	r1, #1
+ 480 0182 4748     		ldr	r0, .L26
+ 481 0184 FFF7FEFF 		bl	_ZN5daisy9DaisySeed17SetAudioBlockSizeEj
+ 482              	.LVL46:
+  79:MuxTest.cpp   ****     hw.StartAudio(AudioCallback);
+ 483              		.loc 7 79 5 is_stmt 1 view .LVU97
+ 484              		.loc 7 79 18 is_stmt 0 view .LVU98
+ 485 0188 4D49     		ldr	r1, .L26+32
+ 486 018a 4548     		ldr	r0, .L26
+ 487 018c FFF7FEFF 		bl	_ZN5daisy9DaisySeed10StartAudioEPFvPfS1_jE
+ 488              	.LVL47:
+ 489              	.L19:
+  80:MuxTest.cpp   **** 
+  81:MuxTest.cpp   ****     // Loop forever
+  82:MuxTest.cpp   ****     for(;;)
+ 490              		.loc 7 82 5 is_stmt 1 view .LVU99
+  83:MuxTest.cpp   ****     {
+  84:MuxTest.cpp   ****         pot1 = hw.adc.GetMuxFloat(7,0); 
+ 491              		.loc 7 84 9 view .LVU100
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 25
+
+
+ 492              		.loc 7 84 34 is_stmt 0 view .LVU101
+ 493 0190 0022     		movs	r2, #0
+ 494 0192 0721     		movs	r1, #7
+ 495 0194 4848     		ldr	r0, .L26+24
+ 496 0196 FFF7FEFF 		bl	_ZNK5daisy9AdcHandle11GetMuxFloatEhh
+ 497              	.LVL48:
+  85:MuxTest.cpp   ****         setting.FilterPrePost = pot1;
+  86:MuxTest.cpp   ****         pot2 = hw.adc.GetMuxFloat(7,1);
+ 498              		.loc 7 86 34 view .LVU102
+ 499 019a 0122     		movs	r2, #1
+ 500 019c 0721     		movs	r1, #7
+ 501 019e 4648     		ldr	r0, .L26+24
+  84:MuxTest.cpp   ****         setting.FilterPrePost = pot1;
+ 502              		.loc 7 84 14 view .LVU103
+ 503 01a0 84ED000A 		vstr.32	s0, [r4]
+  85:MuxTest.cpp   ****         setting.FilterPrePost = pot1;
+ 504              		.loc 7 85 9 is_stmt 1 view .LVU104
+  85:MuxTest.cpp   ****         setting.FilterPrePost = pot1;
+ 505              		.loc 7 85 31 is_stmt 0 view .LVU105
+ 506 01a4 8BED070A 		vstr.32	s0, [fp, #28]
+ 507              		.loc 7 86 9 is_stmt 1 view .LVU106
+ 508              		.loc 7 86 34 is_stmt 0 view .LVU107
+ 509 01a8 FFF7FEFF 		bl	_ZNK5daisy9AdcHandle11GetMuxFloatEhh
+ 510              	.LVL49:
+  87:MuxTest.cpp   ****         pot3 = hw.adc.GetMuxFloat(7,2);
+ 511              		.loc 7 87 34 view .LVU108
+ 512 01ac 0222     		movs	r2, #2
+ 513 01ae 0721     		movs	r1, #7
+ 514 01b0 4148     		ldr	r0, .L26+24
+  86:MuxTest.cpp   ****         pot3 = hw.adc.GetMuxFloat(7,2);
+ 515              		.loc 7 86 14 view .LVU109
+ 516 01b2 8AED000A 		vstr.32	s0, [r10]
+ 517              		.loc 7 87 9 is_stmt 1 view .LVU110
+ 518              		.loc 7 87 34 is_stmt 0 view .LVU111
+ 519 01b6 FFF7FEFF 		bl	_ZNK5daisy9AdcHandle11GetMuxFloatEhh
+ 520              	.LVL50:
+  88:MuxTest.cpp   ****         pot4 = hw.adc.GetMuxFloat(7,3);
+ 521              		.loc 7 88 34 view .LVU112
+ 522 01ba 0322     		movs	r2, #3
+ 523 01bc 0721     		movs	r1, #7
+ 524 01be 3E48     		ldr	r0, .L26+24
+  87:MuxTest.cpp   ****         pot3 = hw.adc.GetMuxFloat(7,2);
+ 525              		.loc 7 87 14 view .LVU113
+ 526 01c0 89ED000A 		vstr.32	s0, [r9]
+ 527              		.loc 7 88 9 is_stmt 1 view .LVU114
+ 528              		.loc 7 88 34 is_stmt 0 view .LVU115
+ 529 01c4 FFF7FEFF 		bl	_ZNK5daisy9AdcHandle11GetMuxFloatEhh
+ 530              	.LVL51:
+  89:MuxTest.cpp   ****         pot5 = hw.adc.GetMuxFloat(7,4); 
+ 531              		.loc 7 89 34 view .LVU116
+ 532 01c8 0422     		movs	r2, #4
+ 533 01ca 0721     		movs	r1, #7
+ 534 01cc 3A48     		ldr	r0, .L26+24
+  88:MuxTest.cpp   ****         pot4 = hw.adc.GetMuxFloat(7,3);
+ 535              		.loc 7 88 14 view .LVU117
+ 536 01ce 88ED000A 		vstr.32	s0, [r8]
+ 537              		.loc 7 89 9 is_stmt 1 view .LVU118
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 26
+
+
+ 538              		.loc 7 89 34 is_stmt 0 view .LVU119
+ 539 01d2 FFF7FEFF 		bl	_ZNK5daisy9AdcHandle11GetMuxFloatEhh
+ 540              	.LVL52:
+  90:MuxTest.cpp   ****         pot6 = hw.adc.GetMuxFloat(7,5); 
+ 541              		.loc 7 90 34 view .LVU120
+ 542 01d6 0522     		movs	r2, #5
+ 543 01d8 0721     		movs	r1, #7
+ 544 01da 3748     		ldr	r0, .L26+24
+  89:MuxTest.cpp   ****         pot5 = hw.adc.GetMuxFloat(7,4); 
+ 545              		.loc 7 89 14 view .LVU121
+ 546 01dc 87ED000A 		vstr.32	s0, [r7]
+ 547              		.loc 7 90 9 is_stmt 1 view .LVU122
+ 548              		.loc 7 90 34 is_stmt 0 view .LVU123
+ 549 01e0 FFF7FEFF 		bl	_ZNK5daisy9AdcHandle11GetMuxFloatEhh
+ 550              	.LVL53:
+  91:MuxTest.cpp   ****         pot7 = hw.adc.GetMuxFloat(7,6); 
+ 551              		.loc 7 91 34 view .LVU124
+ 552 01e4 0622     		movs	r2, #6
+ 553 01e6 0721     		movs	r1, #7
+ 554 01e8 3348     		ldr	r0, .L26+24
+  90:MuxTest.cpp   ****         pot6 = hw.adc.GetMuxFloat(7,5); 
+ 555              		.loc 7 90 14 view .LVU125
+ 556 01ea 86ED000A 		vstr.32	s0, [r6]
+ 557              		.loc 7 91 9 is_stmt 1 view .LVU126
+ 558              		.loc 7 91 34 is_stmt 0 view .LVU127
+ 559 01ee FFF7FEFF 		bl	_ZNK5daisy9AdcHandle11GetMuxFloatEhh
+ 560              	.LVL54:
+  92:MuxTest.cpp   ****         pot8 = hw.adc.GetMuxFloat(7,7); 
+ 561              		.loc 7 92 34 view .LVU128
+ 562 01f2 0722     		movs	r2, #7
+  91:MuxTest.cpp   ****         pot7 = hw.adc.GetMuxFloat(7,6); 
+ 563              		.loc 7 91 14 view .LVU129
+ 564 01f4 334B     		ldr	r3, .L26+36
+ 565              		.loc 7 92 34 view .LVU130
+ 566 01f6 3048     		ldr	r0, .L26+24
+ 567 01f8 1146     		mov	r1, r2
+  91:MuxTest.cpp   ****         pot7 = hw.adc.GetMuxFloat(7,6); 
+ 568              		.loc 7 91 14 view .LVU131
+ 569 01fa 83ED000A 		vstr.32	s0, [r3]
+ 570              		.loc 7 92 9 is_stmt 1 view .LVU132
+ 571              		.loc 7 92 34 is_stmt 0 view .LVU133
+ 572 01fe FFF7FEFF 		bl	_ZNK5daisy9AdcHandle11GetMuxFloatEhh
+ 573              	.LVL55:
+ 574              		.loc 7 92 14 view .LVU134
+ 575 0202 314B     		ldr	r3, .L26+40
+  93:MuxTest.cpp   ****  
+  94:MuxTest.cpp   ****         CV1 = hw.adc.GetFloat(0); 
+ 576              		.loc 7 94 30 view .LVU135
+ 577 0204 0021     		movs	r1, #0
+ 578 0206 2C48     		ldr	r0, .L26+24
+  92:MuxTest.cpp   ****         pot8 = hw.adc.GetMuxFloat(7,7); 
+ 579              		.loc 7 92 14 view .LVU136
+ 580 0208 83ED000A 		vstr.32	s0, [r3]
+ 581              		.loc 7 94 9 is_stmt 1 view .LVU137
+ 582              		.loc 7 94 30 is_stmt 0 view .LVU138
+ 583 020c FFF7FEFF 		bl	_ZNK5daisy9AdcHandle8GetFloatEh
+ 584              	.LVL56:
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 27
+
+
+ 585              		.loc 7 94 13 view .LVU139
+ 586 0210 2E4B     		ldr	r3, .L26+44
+  95:MuxTest.cpp   ****         CV2 = hw.adc.GetFloat(1); 
+ 587              		.loc 7 95 30 view .LVU140
+ 588 0212 0121     		movs	r1, #1
+ 589 0214 2848     		ldr	r0, .L26+24
+  94:MuxTest.cpp   ****         CV2 = hw.adc.GetFloat(1); 
+ 590              		.loc 7 94 13 view .LVU141
+ 591 0216 83ED000A 		vstr.32	s0, [r3]
+ 592              		.loc 7 95 9 is_stmt 1 view .LVU142
+ 593              		.loc 7 95 30 is_stmt 0 view .LVU143
+ 594 021a FFF7FEFF 		bl	_ZNK5daisy9AdcHandle8GetFloatEh
+ 595              	.LVL57:
+ 596              		.loc 7 95 13 view .LVU144
+ 597 021e 2C4B     		ldr	r3, .L26+48
+  96:MuxTest.cpp   ****         CV3 = hw.adc.GetFloat(2); 
+ 598              		.loc 7 96 30 view .LVU145
+ 599 0220 0221     		movs	r1, #2
+ 600 0222 2548     		ldr	r0, .L26+24
+  95:MuxTest.cpp   ****         CV2 = hw.adc.GetFloat(1); 
+ 601              		.loc 7 95 13 view .LVU146
+ 602 0224 83ED000A 		vstr.32	s0, [r3]
+ 603              		.loc 7 96 9 is_stmt 1 view .LVU147
+ 604              		.loc 7 96 30 is_stmt 0 view .LVU148
+ 605 0228 FFF7FEFF 		bl	_ZNK5daisy9AdcHandle8GetFloatEh
+ 606              	.LVL58:
+ 607              		.loc 7 96 13 view .LVU149
+ 608 022c 294B     		ldr	r3, .L26+52
+  97:MuxTest.cpp   ****         CV4 = hw.adc.GetFloat(3); 
+ 609              		.loc 7 97 30 view .LVU150
+ 610 022e 0321     		movs	r1, #3
+ 611 0230 2148     		ldr	r0, .L26+24
+  96:MuxTest.cpp   ****         CV3 = hw.adc.GetFloat(2); 
+ 612              		.loc 7 96 13 view .LVU151
+ 613 0232 83ED000A 		vstr.32	s0, [r3]
+ 614              		.loc 7 97 9 is_stmt 1 view .LVU152
+ 615              		.loc 7 97 30 is_stmt 0 view .LVU153
+ 616 0236 FFF7FEFF 		bl	_ZNK5daisy9AdcHandle8GetFloatEh
+ 617              	.LVL59:
+ 618              		.loc 7 97 13 view .LVU154
+ 619 023a 274B     		ldr	r3, .L26+56
+  98:MuxTest.cpp   ****         CV5 = hw.adc.GetFloat(4); 
+ 620              		.loc 7 98 30 view .LVU155
+ 621 023c 0421     		movs	r1, #4
+ 622 023e 1E48     		ldr	r0, .L26+24
+  97:MuxTest.cpp   ****         CV4 = hw.adc.GetFloat(3); 
+ 623              		.loc 7 97 13 view .LVU156
+ 624 0240 83ED000A 		vstr.32	s0, [r3]
+ 625              		.loc 7 98 9 is_stmt 1 view .LVU157
+ 626              		.loc 7 98 30 is_stmt 0 view .LVU158
+ 627 0244 FFF7FEFF 		bl	_ZNK5daisy9AdcHandle8GetFloatEh
+ 628              	.LVL60:
+ 629              		.loc 7 98 13 view .LVU159
+ 630 0248 244B     		ldr	r3, .L26+60
+  99:MuxTest.cpp   ****         CV6 = hw.adc.GetFloat(5); 
+ 631              		.loc 7 99 30 view .LVU160
+ 632 024a 0521     		movs	r1, #5
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 28
+
+
+ 633 024c 1A48     		ldr	r0, .L26+24
+  98:MuxTest.cpp   ****         CV5 = hw.adc.GetFloat(4); 
+ 634              		.loc 7 98 13 view .LVU161
+ 635 024e 83ED000A 		vstr.32	s0, [r3]
+ 636              		.loc 7 99 9 is_stmt 1 view .LVU162
+ 637              		.loc 7 99 30 is_stmt 0 view .LVU163
+ 638 0252 FFF7FEFF 		bl	_ZNK5daisy9AdcHandle8GetFloatEh
+ 639              	.LVL61:
+ 640              		.loc 7 99 13 view .LVU164
+ 641 0256 224B     		ldr	r3, .L26+64
+ 100:MuxTest.cpp   ****         CV7 = hw.adc.GetFloat(6); 
+ 642              		.loc 7 100 30 view .LVU165
+ 643 0258 0621     		movs	r1, #6
+ 644 025a 1748     		ldr	r0, .L26+24
+  99:MuxTest.cpp   ****         CV6 = hw.adc.GetFloat(5); 
+ 645              		.loc 7 99 13 view .LVU166
+ 646 025c 83ED000A 		vstr.32	s0, [r3]
+ 647              		.loc 7 100 9 is_stmt 1 view .LVU167
+ 648              		.loc 7 100 30 is_stmt 0 view .LVU168
+ 649 0260 FFF7FEFF 		bl	_ZNK5daisy9AdcHandle8GetFloatEh
+ 650              	.LVL62:
+ 651 0264 F0EE407A 		vmov.f32	s15, s0
+ 652              		.loc 7 100 13 view .LVU169
+ 653 0268 1E4B     		ldr	r3, .L26+68
+ 101:MuxTest.cpp   **** 
+ 102:MuxTest.cpp   ****         led1.Set(pot1);
+ 654              		.loc 7 102 17 view .LVU170
+ 655 026a 0E48     		ldr	r0, .L26+4
+ 656 026c 94ED000A 		vldr.32	s0, [r4]
+ 100:MuxTest.cpp   ****         CV7 = hw.adc.GetFloat(6); 
+ 657              		.loc 7 100 13 view .LVU171
+ 658 0270 C3ED007A 		vstr.32	s15, [r3]
+ 659              		.loc 7 102 9 is_stmt 1 view .LVU172
+ 660              		.loc 7 102 17 is_stmt 0 view .LVU173
+ 661 0274 FFF7FEFF 		bl	_ZN5daisy3Led3SetEf
+ 662              	.LVL63:
+ 103:MuxTest.cpp   ****         
+ 104:MuxTest.cpp   ****         if(save_flag)   //if save_flag set save settings
+ 663              		.loc 7 104 9 is_stmt 1 view .LVU174
+ 664              	.LBB93:
+ 665              	.LBI93:
+  87:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****     { return _M_base.load(); }
+ 666              		.loc 8 87 5 view .LVU175
+ 667              	.LBE93:
+ 668              		.loc 8 88 7 view .LVU176
+ 669              	.LBB96:
+ 670              	.LBB94:
+ 671              	.LBI94:
+ 413:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       {
+ 672              		.loc 9 413 7 view .LVU177
+ 673              	.LBB95:
+ 674              		.loc 9 419 24 is_stmt 0 view .LVU178
+ 675 0278 BFF35B8F 		dmb	ish
+ 676 027c 2B78     		ldrb	r3, [r5]	@ zero_extendqisi2
+ 677 027e BFF35B8F 		dmb	ish
+ 678              	.LBE95:
+ 679              	.LBE94:
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 29
+
+
+ 680              	.LBE96:
+ 681              		.loc 7 104 9 view .LVU179
+ 682 0282 002B     		cmp	r3, #0
+ 683 0284 84D0     		beq	.L19
+ 105:MuxTest.cpp   ****         {
+ 106:MuxTest.cpp   ****             if (SaveSettings(setting) == DSY_MEMORY_OK)
+ 684              		.loc 7 106 13 is_stmt 1 view .LVU180
+ 685              		.loc 7 106 29 is_stmt 0 view .LVU181
+ 686 0286 1848     		ldr	r0, .L26+72
+ 687 0288 FFF7FEFF 		bl	_Z12SaveSettingsRK8Settings
+ 688              	.LVL64:
+ 689              		.loc 7 106 13 view .LVU182
+ 690 028c 0028     		cmp	r0, #0
+ 691 028e 7FF47FAF 		bne	.L19
+ 107:MuxTest.cpp   ****             {
+ 108:MuxTest.cpp   ****                 save_flag = false;
+ 692              		.loc 7 108 17 is_stmt 1 view .LVU183
+ 693              	.LVL65:
+ 694              	.LBB97:
+ 695              	.LBI97:
+  80:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic ****     { return _M_base.operator=(__i); }
+ 696              		.loc 8 80 5 view .LVU184
+ 697              	.LBB98:
+  81:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** 
+ 698              		.loc 8 81 7 view .LVU185
+ 699              	.LBB99:
+ 700              	.LBI99:
+ 288:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       {
+ 701              		.loc 9 288 7 view .LVU186
+ 702              	.LBB100:
+ 703              	.LBI100:
+ 390:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       {
+ 704              		.loc 9 390 7 view .LVU187
+ 705              	.LBB101:
+ 397:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       }
+ 706              		.loc 9 397 18 is_stmt 0 view .LVU188
+ 707 0292 BFF35B8F 		dmb	ish
+ 708 0296 2870     		strb	r0, [r5]
+ 709 0298 BFF35B8F 		dmb	ish
+ 710              	.LVL66:
+ 397:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/bits/atomic_base.h ****       }
+ 711              		.loc 9 397 18 view .LVU189
+ 712              	.LBE101:
+ 713              	.LBE100:
+ 714              	.LBE99:
+  81:/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/atomic **** 
+ 715              		.loc 8 81 35 view .LVU190
+ 716 029c 78E7     		b	.L19
+ 717              	.L27:
+ 718 029e 00BF     		.align	2
+ 719              	.L26:
+ 720 02a0 00000000 		.word	.LANCHOR4
+ 721 02a4 00000000 		.word	.LANCHOR0
+ 722 02a8 00000000 		.word	.LANCHOR1
+ 723 02ac 00000000 		.word	.LANCHOR5
+ 724 02b0 00000000 		.word	.LANCHOR10
+ 725 02b4 00000000 		.word	.LANCHOR11
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 30
+
+
+ 726 02b8 18000000 		.word	.LANCHOR4+24
+ 727 02bc 00000000 		.word	.LANCHOR3
+ 728 02c0 00000000 		.word	_ZL13AudioCallbackPfS_j
+ 729 02c4 00000000 		.word	.LANCHOR12
+ 730 02c8 00000000 		.word	.LANCHOR13
+ 731 02cc 00000000 		.word	.LANCHOR14
+ 732 02d0 00000000 		.word	.LANCHOR15
+ 733 02d4 00000000 		.word	.LANCHOR16
+ 734 02d8 00000000 		.word	.LANCHOR17
+ 735 02dc 00000000 		.word	.LANCHOR18
+ 736 02e0 00000000 		.word	.LANCHOR19
+ 737 02e4 00000000 		.word	.LANCHOR20
+ 738 02e8 00000000 		.word	.LANCHOR6
+ 739 02ec 00000000 		.word	.LANCHOR7
+ 740 02f0 00000000 		.word	.LANCHOR8
+ 741 02f4 00000000 		.word	.LANCHOR9
+ 742              	.LBE98:
+ 743              	.LBE97:
+ 744              		.cfi_endproc
+ 745              	.LFE3911:
+ 747              		.section	.text.startup._GLOBAL__sub_I_setting,"ax",%progbits
+ 748              		.align	1
+ 749              		.p2align 2,,3
+ 750              		.syntax unified
+ 751              		.thumb
+ 752              		.thumb_func
+ 753              		.fpu fpv5-d16
+ 755              	_GLOBAL__sub_I_setting:
+ 756              	.LFB4467:
+ 109:MuxTest.cpp   ****             }
+ 110:MuxTest.cpp   ****         }
+ 111:MuxTest.cpp   ****     }
+ 112:MuxTest.cpp   **** }...
+ 757              		.loc 7 112 1 is_stmt 1 view -0
+ 758              		.cfi_startproc
+ 759              		@ args = 0, pretend = 0, frame = 0
+ 760              		@ frame_needed = 0, uses_anonymous_args = 0
+ 761              	.LBB118:
+ 762              	.LBI118:
+ 763              		.loc 7 112 1 view .LVU192
+ 764              	.LVL67:
+ 765              	.LBB119:
+ 766              	.LBB120:
+ 767              	.LBI120:
+  21:../DaisyExamples/libdaisy/src/daisy_seed.h ****     ~DaisySeed() {}
+ 768              		.loc 2 21 5 view .LVU193
+ 769              	.LBB121:
+ 770              	.LBB122:
+ 771              	.LBI122:
+  36:../DaisyExamples/libdaisy/src/hid/audio.h ****     ~AudioHandle() {}
+ 772              		.loc 6 36 5 view .LVU194
+ 773              	.LBB123:
+ 774              	.LBB124:
+  36:../DaisyExamples/libdaisy/src/hid/audio.h ****     ~AudioHandle() {}
+ 775              		.loc 6 36 35 is_stmt 0 view .LVU195
+ 776 0000 0023     		movs	r3, #0
+ 777 0002 0A48     		ldr	r0, .L30
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 31
+
+
+ 778              	.LBE124:
+ 779              	.LBE123:
+ 780              	.LBE122:
+ 781              	.LBE121:
+ 782              	.LBE120:
+ 783              		.file 10 "MuxTest.h"
+   1:MuxTest.h     **** #ifndef MUXTEST_H
+   2:MuxTest.h     **** #define MUXTEST_H
+   3:MuxTest.h     **** 
+   4:MuxTest.h     **** //#include "daisysp.h"
+   5:MuxTest.h     **** #include "daisy_seed.h"
+   6:MuxTest.h     **** 
+   7:MuxTest.h     **** //using namespace daisysp;
+   8:MuxTest.h     **** using namespace daisy;
+   9:MuxTest.h     **** 
+  10:MuxTest.h     **** static DaisySeed hw;
+ 784              		.loc 10 10 18 view .LVU196
+ 785 0004 0A4A     		ldr	r2, .L30+4
+ 786 0006 0B49     		ldr	r1, .L30+8
+ 787              	.LBE119:
+ 788              	.LBE118:
+ 789              		.loc 7 112 1 view .LVU197
+ 790 0008 10B5     		push	{r4, lr}
+ 791              		.cfi_def_cfa_offset 8
+ 792              		.cfi_offset 4, -8
+ 793              		.cfi_offset 14, -4
+ 794              	.LBB137:
+ 795              	.LBB135:
+  24:MuxTest.cpp   **** Led led1,led2;
+ 796              		.loc 7 24 5 view .LVU198
+ 797 000a 0B4C     		ldr	r4, .L30+12
+ 798              	.LBB132:
+ 799              	.LBB131:
+ 800              	.LBB127:
+ 801              	.LBB126:
+ 802              	.LBB125:
+  36:../DaisyExamples/libdaisy/src/hid/audio.h ****     ~AudioHandle() {}
+ 803              		.loc 6 36 35 view .LVU199
+ 804 000c 4361     		str	r3, [r0, #20]
+ 805              	.LVL68:
+  36:../DaisyExamples/libdaisy/src/hid/audio.h ****     ~AudioHandle() {}
+ 806              		.loc 6 36 35 view .LVU200
+ 807              	.LBE125:
+ 808              	.LBE126:
+ 809              	.LBE127:
+ 810              	.LBB128:
+ 811              	.LBI128:
+  84:../DaisyExamples/libdaisy/src/per/adc.h ****     ~AdcHandle() {}
+ 812              		.loc 5 84 5 is_stmt 1 view .LVU201
+  84:../DaisyExamples/libdaisy/src/per/adc.h ****     ~AdcHandle() {}
+ 813              		.loc 5 84 5 is_stmt 0 view .LVU202
+ 814              	.LBE128:
+ 815              	.LBB129:
+ 816              	.LBI129:
+  40:../DaisyExamples/libdaisy/src/hid/usb.h **** 
+ 817              		.loc 4 40 5 is_stmt 1 view .LVU203
+  40:../DaisyExamples/libdaisy/src/hid/usb.h **** 
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 32
+
+
+ 818              		.loc 4 40 5 is_stmt 0 view .LVU204
+ 819              	.LBE129:
+ 820              	.LBB130:
+ 821              	.LBI130:
+  56:../DaisyExamples/libdaisy/src/sys/system.h ****     ~System() {}
+ 822              		.loc 3 56 5 is_stmt 1 view .LVU205
+  56:../DaisyExamples/libdaisy/src/sys/system.h ****     ~System() {}
+ 823              		.loc 3 56 5 is_stmt 0 view .LVU206
+ 824              	.LBE130:
+ 825              	.LBE131:
+ 826              	.LBE132:
+ 827              		.loc 10 10 18 view .LVU207
+ 828 000e FFF7FEFF 		bl	__aeabi_atexit
+ 829              	.LVL69:
+ 830              	.LBB133:
+ 831              	.LBI133:
+  24:../DaisyExamples/libdaisy/src/hid/led.h ****     ~Led() {}
+ 832              		.loc 1 24 5 is_stmt 1 view .LVU208
+  24:../DaisyExamples/libdaisy/src/hid/led.h ****     ~Led() {}
+ 833              		.loc 1 24 5 is_stmt 0 view .LVU209
+ 834              	.LBE133:
+  24:MuxTest.cpp   **** Led led1,led2;
+ 835              		.loc 7 24 5 view .LVU210
+ 836 0012 2146     		mov	r1, r4
+ 837 0014 064A     		ldr	r2, .L30+4
+ 838 0016 0948     		ldr	r0, .L30+16
+ 839 0018 FFF7FEFF 		bl	__aeabi_atexit
+ 840              	.LVL70:
+ 841              	.LBB134:
+ 842              	.LBI134:
+  24:../DaisyExamples/libdaisy/src/hid/led.h ****     ~Led() {}
+ 843              		.loc 1 24 5 is_stmt 1 view .LVU211
+  24:../DaisyExamples/libdaisy/src/hid/led.h ****     ~Led() {}
+ 844              		.loc 1 24 5 is_stmt 0 view .LVU212
+ 845              	.LBE134:
+  24:MuxTest.cpp   **** Led led1,led2;
+ 846              		.loc 7 24 10 view .LVU213
+ 847 001c 2146     		mov	r1, r4
+ 848 001e 044A     		ldr	r2, .L30+4
+ 849 0020 0748     		ldr	r0, .L30+20
+ 850              	.LBE135:
+ 851              	.LBE137:
+ 852              		.loc 7 112 1 view .LVU214
+ 853 0022 BDE81040 		pop	{r4, lr}
+ 854              		.cfi_restore 14
+ 855              		.cfi_restore 4
+ 856              		.cfi_def_cfa_offset 0
+ 857              	.LBB138:
+ 858              	.LBB136:
+  24:MuxTest.cpp   **** Led led1,led2;
+ 859              		.loc 7 24 10 view .LVU215
+ 860 0026 FFF7FEBF 		b	__aeabi_atexit
+ 861              	.LVL71:
+ 862              	.L31:
+ 863 002a 00BF     		.align	2
+ 864              	.L30:
+ 865 002c 00000000 		.word	.LANCHOR4
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 33
+
+
+ 866 0030 00000000 		.word	__dso_handle
+ 867 0034 00000000 		.word	_ZN5daisy9DaisySeedD1Ev
+ 868 0038 00000000 		.word	_ZN5daisy3LedD1Ev
+ 869 003c 00000000 		.word	.LANCHOR0
+ 870 0040 00000000 		.word	.LANCHOR1
+ 871              	.LBE136:
+ 872              	.LBE138:
+ 873              		.cfi_endproc
+ 874              	.LFE4467:
+ 876              		.section	.init_array,"aw",%init_array
+ 877              		.align	2
+ 878 0000 00000000 		.word	_GLOBAL__sub_I_setting(target1)
+ 879              		.global	save_flag
+ 880              		.global	led2
+ 881              		.global	led1
+ 882              		.global	CV8
+ 883              		.global	CV7
+ 884              		.global	CV6
+ 885              		.global	CV5
+ 886              		.global	CV4
+ 887              		.global	CV3
+ 888              		.global	CV2
+ 889              		.global	CV1
+ 890              		.global	pot8
+ 891              		.global	pot7
+ 892              		.global	pot6
+ 893              		.global	pot5
+ 894              		.global	pot4
+ 895              		.global	pot3
+ 896              		.global	pot2
+ 897              		.global	pot1
+ 898              		.global	setting
+ 899              		.section	.bss.CV1,"aw",%nobits
+ 900              		.align	2
+ 901              		.set	.LANCHOR14,. + 0
+ 904              	CV1:
+ 905 0000 00000000 		.space	4
+ 906              		.section	.bss.CV2,"aw",%nobits
+ 907              		.align	2
+ 908              		.set	.LANCHOR15,. + 0
+ 911              	CV2:
+ 912 0000 00000000 		.space	4
+ 913              		.section	.bss.CV3,"aw",%nobits
+ 914              		.align	2
+ 915              		.set	.LANCHOR16,. + 0
+ 918              	CV3:
+ 919 0000 00000000 		.space	4
+ 920              		.section	.bss.CV4,"aw",%nobits
+ 921              		.align	2
+ 922              		.set	.LANCHOR17,. + 0
+ 925              	CV4:
+ 926 0000 00000000 		.space	4
+ 927              		.section	.bss.CV5,"aw",%nobits
+ 928              		.align	2
+ 929              		.set	.LANCHOR18,. + 0
+ 932              	CV5:
+ 933 0000 00000000 		.space	4
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 34
+
+
+ 934              		.section	.bss.CV6,"aw",%nobits
+ 935              		.align	2
+ 936              		.set	.LANCHOR19,. + 0
+ 939              	CV6:
+ 940 0000 00000000 		.space	4
+ 941              		.section	.bss.CV7,"aw",%nobits
+ 942              		.align	2
+ 943              		.set	.LANCHOR20,. + 0
+ 946              	CV7:
+ 947 0000 00000000 		.space	4
+ 948              		.section	.bss.CV8,"aw",%nobits
+ 949              		.align	2
+ 952              	CV8:
+ 953 0000 00000000 		.space	4
+ 954              		.section	.bss._ZL2hw,"aw",%nobits
+ 955              		.align	2
+ 956              		.set	.LANCHOR4,. + 0
+ 959              	_ZL2hw:
+ 960 0000 00000000 		.space	60
+ 960      00000000 
+ 960      00000000 
+ 960      00000000 
+ 960      00000000 
+ 961              		.section	.bss._ZZL13AudioCallbackPfS_jE13timeSinceLast,"aw",%nobits
+ 962              		.align	2
+ 963              		.set	.LANCHOR2,. + 0
+ 966              	_ZZL13AudioCallbackPfS_jE13timeSinceLast:
+ 967 0000 00000000 		.space	4
+ 968              		.section	.bss.led1,"aw",%nobits
+ 969              		.align	2
+ 970              		.set	.LANCHOR0,. + 0
+ 973              	led1:
+ 974 0000 00000000 		.space	28
+ 974      00000000 
+ 974      00000000 
+ 974      00000000 
+ 974      00000000 
+ 975              		.section	.bss.led2,"aw",%nobits
+ 976              		.align	2
+ 977              		.set	.LANCHOR1,. + 0
+ 980              	led2:
+ 981 0000 00000000 		.space	28
+ 981      00000000 
+ 981      00000000 
+ 981      00000000 
+ 981      00000000 
+ 982              		.section	.bss.pot1,"aw",%nobits
+ 983              		.align	2
+ 984              		.set	.LANCHOR5,. + 0
+ 987              	pot1:
+ 988 0000 00000000 		.space	4
+ 989              		.section	.bss.pot2,"aw",%nobits
+ 990              		.align	2
+ 991              		.set	.LANCHOR7,. + 0
+ 994              	pot2:
+ 995 0000 00000000 		.space	4
+ 996              		.section	.bss.pot3,"aw",%nobits
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 35
+
+
+ 997              		.align	2
+ 998              		.set	.LANCHOR8,. + 0
+ 1001              	pot3:
+ 1002 0000 00000000 		.space	4
+ 1003              		.section	.bss.pot4,"aw",%nobits
+ 1004              		.align	2
+ 1005              		.set	.LANCHOR9,. + 0
+ 1008              	pot4:
+ 1009 0000 00000000 		.space	4
+ 1010              		.section	.bss.pot5,"aw",%nobits
+ 1011              		.align	2
+ 1012              		.set	.LANCHOR10,. + 0
+ 1015              	pot5:
+ 1016 0000 00000000 		.space	4
+ 1017              		.section	.bss.pot6,"aw",%nobits
+ 1018              		.align	2
+ 1019              		.set	.LANCHOR11,. + 0
+ 1022              	pot6:
+ 1023 0000 00000000 		.space	4
+ 1024              		.section	.bss.pot7,"aw",%nobits
+ 1025              		.align	2
+ 1026              		.set	.LANCHOR12,. + 0
+ 1029              	pot7:
+ 1030 0000 00000000 		.space	4
+ 1031              		.section	.bss.pot8,"aw",%nobits
+ 1032              		.align	2
+ 1033              		.set	.LANCHOR13,. + 0
+ 1036              	pot8:
+ 1037 0000 00000000 		.space	4
+ 1038              		.section	.bss.save_flag,"aw",%nobits
+ 1039              		.align	2
+ 1040              		.set	.LANCHOR3,. + 0
+ 1043              	save_flag:
+ 1044 0000 00       		.space	1
+ 1045              		.section	.bss.setting,"aw",%nobits
+ 1046              		.align	2
+ 1047              		.set	.LANCHOR6,. + 0
+ 1050              	setting:
+ 1051 0000 00000000 		.space	32
+ 1051      00000000 
+ 1051      00000000 
+ 1051      00000000 
+ 1051      00000000 
+ 1052              		.text
+ 1053              	.Letext0:
+ 1054              		.file 11 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/machine/_d
+ 1055              		.file 12 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/sys/_stdin
+ 1056              		.file 13 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/stdint.h"
+ 1057              		.file 14 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
+ 1058              		.file 15 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
+ 1059              		.file 16 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
+ 1060              		.file 17 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
+ 1061              		.file 18 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
+ 1062              		.file 19 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
+ 1063              		.file 20 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
+ 1064              		.file 21 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
+ 1065              		.file 22 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 36
+
+
+ 1066              		.file 23 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
+ 1067              		.file 24 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
+ 1068              		.file 25 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
+ 1069              		.file 26 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
+ 1070              		.file 27 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
+ 1071              		.file 28 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
+ 1072              		.file 29 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
+ 1073              		.file 30 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
+ 1074              		.file 31 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
+ 1075              		.file 32 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
+ 1076              		.file 33 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
+ 1077              		.file 34 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
+ 1078              		.file 35 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/lib/gcc/arm-none-eabi/9.2.1/incl
+ 1079              		.file 36 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/sys/lock.h
+ 1080              		.file 37 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/sys/_types
+ 1081              		.file 38 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/sys/reent.
+ 1082              		.file 39 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/stdlib.h"
+ 1083              		.file 40 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
+ 1084              		.file 41 "../DaisyExamples/libdaisy/src/daisy_core.h"
+ 1085              		.file 42 "../DaisyExamples/libdaisy/src/per/tim.h"
+ 1086              		.file 43 "../DaisyExamples/libdaisy/src/per/sai.h"
+ 1087              		.file 44 "../DaisyExamples/libdaisy/src/per/qspi.h"
+ 1088              		.file 45 "../DaisyExamples/libdaisy/src/per/dac.h"
+ 1089              		.file 46 "../DaisyExamples/libdaisy/src/per/gpio.h"
+ 1090              		.file 47 "../DaisyExamples/libdaisy/src/dev/sdram.h"
+ 1091              		.file 48 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/math.h"
+ 1092              		.file 49 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/lib/gcc/arm-none-eabi/9.2.1/incl
+ 1093              		.file 50 "<built-in>"
+ 1094              		.file 51 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/stdio.h"
+ 1095              		.file 52 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/sys/unistd
+ 1096              		.file 53 "../DaisyExamples/libdaisy/src/util/oled_fonts.h"
+ 1097              		.file 54 "../DaisyExamples/DaisySP/Source/Control/adenv.h"
+ 1098              		.file 55 "../DaisyExamples/DaisySP/Source/Utility/dsp.h"
+ 1099              		.file 56 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
+ 1100              		.file 57 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/wchar.h"
+ 1101              		.file 58 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/locale.h"
+ 1102              		.file 59 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/ctype.h"
+ 1103              		.file 60 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/sys/errno.
+ 1104              		.file 61 "QSPI_Settings.h"
+ 1105              		.file 62 "../DaisyExamples/libdaisy/src/dev/sr_595.h"
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 37
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 MuxTest.cpp
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:17     .text._ZN5daisy3LedD2Ev:0000000000000000 $t
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:26     .text._ZN5daisy3LedD2Ev:0000000000000000 _ZN5daisy3LedD2Ev
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:26     .text._ZN5daisy3LedD2Ev:0000000000000000 _ZN5daisy3LedD1Ev
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:43     .text._ZN5daisy9DaisySeedD2Ev:0000000000000000 $t
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:51     .text._ZN5daisy9DaisySeedD2Ev:0000000000000000 _ZN5daisy9DaisySeedD2Ev
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:51     .text._ZN5daisy9DaisySeedD2Ev:0000000000000000 _ZN5daisy9DaisySeedD1Ev
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:92     .text._ZL13AudioCallbackPfS_j:0000000000000000 $t
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:99     .text._ZL13AudioCallbackPfS_j:0000000000000000 _ZL13AudioCallbackPfS_j
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:249    .text._ZL13AudioCallbackPfS_j:0000000000000074 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:257    .text.startup.main:0000000000000000 $t
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:265    .text.startup.main:0000000000000000 main
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:720    .text.startup.main:00000000000002a0 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:748    .text.startup._GLOBAL__sub_I_setting:0000000000000000 $t
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:755    .text.startup._GLOBAL__sub_I_setting:0000000000000000 _GLOBAL__sub_I_setting
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:865    .text.startup._GLOBAL__sub_I_setting:000000000000002c $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:877    .init_array:0000000000000000 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:1043   .bss.save_flag:0000000000000000 save_flag
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:980    .bss.led2:0000000000000000 led2
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:973    .bss.led1:0000000000000000 led1
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:952    .bss.CV8:0000000000000000 CV8
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:946    .bss.CV7:0000000000000000 CV7
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:939    .bss.CV6:0000000000000000 CV6
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:932    .bss.CV5:0000000000000000 CV5
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:925    .bss.CV4:0000000000000000 CV4
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:918    .bss.CV3:0000000000000000 CV3
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:911    .bss.CV2:0000000000000000 CV2
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:904    .bss.CV1:0000000000000000 CV1
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:1036   .bss.pot8:0000000000000000 pot8
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:1029   .bss.pot7:0000000000000000 pot7
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:1022   .bss.pot6:0000000000000000 pot6
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:1015   .bss.pot5:0000000000000000 pot5
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:1008   .bss.pot4:0000000000000000 pot4
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:1001   .bss.pot3:0000000000000000 pot3
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:994    .bss.pot2:0000000000000000 pot2
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:987    .bss.pot1:0000000000000000 pot1
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:1050   .bss.setting:0000000000000000 setting
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:900    .bss.CV1:0000000000000000 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:907    .bss.CV2:0000000000000000 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:914    .bss.CV3:0000000000000000 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:921    .bss.CV4:0000000000000000 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:928    .bss.CV5:0000000000000000 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:935    .bss.CV6:0000000000000000 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:942    .bss.CV7:0000000000000000 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:949    .bss.CV8:0000000000000000 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:955    .bss._ZL2hw:0000000000000000 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:959    .bss._ZL2hw:0000000000000000 _ZL2hw
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:962    .bss._ZZL13AudioCallbackPfS_jE13timeSinceLast:0000000000000000 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:966    .bss._ZZL13AudioCallbackPfS_jE13timeSinceLast:0000000000000000 _ZZL13AudioCallbackPfS_jE13timeSinceLast
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:969    .bss.led1:0000000000000000 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:976    .bss.led2:0000000000000000 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:983    .bss.pot1:0000000000000000 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:990    .bss.pot2:0000000000000000 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:997    .bss.pot3:0000000000000000 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:1004   .bss.pot4:0000000000000000 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:1011   .bss.pot5:0000000000000000 $d
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s 			page 38
+
+
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:1018   .bss.pot6:0000000000000000 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:1025   .bss.pot7:0000000000000000 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:1032   .bss.pot8:0000000000000000 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:1039   .bss.save_flag:0000000000000000 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccR5cM8C.s:1046   .bss.setting:0000000000000000 $d
+                           .group:0000000000000000 _ZN5daisy3LedD5Ev
+                           .group:0000000000000000 _ZN5daisy9DaisySeedD5Ev
+
+UNDEFINED SYMBOLS
+_ZN5daisy3Led6UpdateEv
+_ZN5daisy6System6GetNowEv
+_ZN5daisy9DaisySeed9ConfigureEv
+_ZN5daisy9DaisySeed4InitEb
+_ZN5daisy9DaisySeed6GetPinEh
+_ZN5daisy9DaisySeed15AudioSampleRateEv
+_ZN5daisy3Led4InitE12dsy_gpio_pinbf
+_Z12LoadSettingsv
+_ZN5daisy3Led3SetEf
+_ZN5daisy16AdcChannelConfig10InitSingleE12dsy_gpio_pin
+_ZN5daisy16AdcChannelConfig7InitMuxE12dsy_gpio_pinjS1_S1_S1_
+_ZN5daisy9AdcHandle4InitEPNS_16AdcChannelConfigEjNS0_12OverSamplingE
+_ZN5daisy9AdcHandle5StartEv
+_ZN5daisy9DaisySeed17SetAudioBlockSizeEj
+_ZN5daisy9DaisySeed10StartAudioEPFvPfS1_jE
+_ZNK5daisy9AdcHandle11GetMuxFloatEhh
+_ZNK5daisy9AdcHandle8GetFloatEh
+_Z12SaveSettingsRK8Settings
+__aeabi_atexit
+__dso_handle
