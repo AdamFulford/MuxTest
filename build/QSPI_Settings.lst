@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 1
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -58,7 +58,7 @@ ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 1
   34              		@ link register save eliminated.
   35              	.LBB46:
   36              	.LBI46:
-ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 2
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s 			page 2
 
 
   37              		.file 2 "../DaisyExamples/libdaisy/src/sys/system.h"
@@ -118,7 +118,7 @@ ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 1
   54:../DaisyExamples/libdaisy/src/sys/system.h ****     };
   55:../DaisyExamples/libdaisy/src/sys/system.h **** 
   56:../DaisyExamples/libdaisy/src/sys/system.h ****     System() {}
-ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 3
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s 			page 3
 
 
   57:../DaisyExamples/libdaisy/src/sys/system.h ****     ~System() {}
@@ -178,7 +178,7 @@ ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 1
   49              		.file 4 "../DaisyExamples/libdaisy/src/per/adc.h"
    1:../DaisyExamples/libdaisy/src/per/adc.h **** #pragma once
    2:../DaisyExamples/libdaisy/src/per/adc.h **** #ifndef DSY_ADC_H
-ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 4
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s 			page 4
 
 
    3:../DaisyExamples/libdaisy/src/per/adc.h **** #define DSY_ADC_H /**< Macro */
@@ -238,7 +238,7 @@ ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 1
   57:../DaisyExamples/libdaisy/src/per/adc.h ****     dsy_gpio pin_;                   /**< & */
   58:../DaisyExamples/libdaisy/src/per/adc.h ****     dsy_gpio mux_pin_[MUX_SEL_LAST]; /**< & */
   59:../DaisyExamples/libdaisy/src/per/adc.h ****     uint8_t  mux_channels_;          /**< & */
-ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 5
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s 			page 5
 
 
   60:../DaisyExamples/libdaisy/src/per/adc.h **** };
@@ -298,7 +298,7 @@ ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 1
   23:../DaisyExamples/libdaisy/src/hid/audio.h ****         ERR,
   24:../DaisyExamples/libdaisy/src/hid/audio.h ****     };
   25:../DaisyExamples/libdaisy/src/hid/audio.h **** 
-ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 6
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s 			page 6
 
 
   26:../DaisyExamples/libdaisy/src/hid/audio.h ****     /** Non-Interleaving Callback format. Both arrays arranged by float[chn][sample] */
@@ -339,31 +339,29 @@ ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 1
    3:QSPI_Settings.cpp **** #include <math.h>
    4:QSPI_Settings.cpp **** 
    5:QSPI_Settings.cpp **** #define BUFF_SIZE (sizeof(Settings)/sizeof(float))
-   6:QSPI_Settings.cpp **** //using namespace daisy;
-   7:QSPI_Settings.cpp **** 
-   8:QSPI_Settings.cpp **** static uint32_t DSY_QSPI_BSS membuff[(4 * BUFF_SIZE) + 1];   //block of memory in flash
+   6:QSPI_Settings.cpp **** 
+   7:QSPI_Settings.cpp **** //block of memory in flash
+   8:QSPI_Settings.cpp **** static uint32_t DSY_QSPI_BSS membuff[(4 * BUFF_SIZE) + 1];   
    9:QSPI_Settings.cpp **** 
-  10:QSPI_Settings.cpp **** 
-  11:QSPI_Settings.cpp **** //constexpr uint32_t base = 0x90000000;
-  12:QSPI_Settings.cpp **** uint32_t base = (uint32_t) &membuff[0]; //this gives same address as above
-  13:QSPI_Settings.cpp **** 
-  14:QSPI_Settings.cpp **** //save data to flash memory
-  15:QSPI_Settings.cpp **** int SaveSettings(const Settings &currentSetting)
-  16:QSPI_Settings.cpp **** {
-  79              		.loc 6 16 1 is_stmt 1 view -0
+  10:QSPI_Settings.cpp **** uint32_t base = (uint32_t) &membuff[0];
+  11:QSPI_Settings.cpp **** 
+  12:QSPI_Settings.cpp **** //save data to flash memory
+  13:QSPI_Settings.cpp **** int SaveSettings(const Settings &currentSetting)
+  14:QSPI_Settings.cpp **** {
+  79              		.loc 6 14 1 is_stmt 1 view -0
   80              		.cfi_startproc
   81              		@ args = 0, pretend = 0, frame = 72
   82              		@ frame_needed = 0, uses_anonymous_args = 0
-  17:QSPI_Settings.cpp ****     float inbuff[BUFF_SIZE];
-  83              		.loc 6 17 5 view .LVU11
-  18:QSPI_Settings.cpp **** 
-  19:QSPI_Settings.cpp ****     inbuff[0] = currentSetting.RevLength;
-ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 7
+  15:QSPI_Settings.cpp ****     float inbuff[BUFF_SIZE];
+  83              		.loc 6 15 5 view .LVU11
+  16:QSPI_Settings.cpp **** 
+  17:QSPI_Settings.cpp ****     inbuff[0] = currentSetting.RevLength;
+  84              		.loc 6 17 5 view .LVU12
+  14:QSPI_Settings.cpp ****     float inbuff[BUFF_SIZE];
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s 			page 7
 
 
-  84              		.loc 6 19 5 view .LVU12
-  16:QSPI_Settings.cpp ****     float inbuff[BUFF_SIZE];
-  85              		.loc 6 16 1 is_stmt 0 view .LVU13
+  85              		.loc 6 14 1 is_stmt 0 view .LVU13
   86 0000 F0B5     		push	{r4, r5, r6, r7, lr}
   87              		.cfi_def_cfa_offset 20
   88              		.cfi_offset 4, -20
@@ -371,206 +369,195 @@ ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 1
   90              		.cfi_offset 6, -12
   91              		.cfi_offset 7, -8
   92              		.cfi_offset 14, -4
-  20:QSPI_Settings.cpp ****     inbuff[1] = currentSetting.tapRatio;
-  93              		.loc 6 20 15 view .LVU14
+  18:QSPI_Settings.cpp ****     inbuff[1] = currentSetting.tapRatio;
+  93              		.loc 6 18 15 view .LVU14
   94 0002 4568     		ldr	r5, [r0, #4]	@ float
-  16:QSPI_Settings.cpp ****     float inbuff[BUFF_SIZE];
-  95              		.loc 6 16 1 view .LVU15
+  14:QSPI_Settings.cpp ****     float inbuff[BUFF_SIZE];
+  95              		.loc 6 14 1 view .LVU15
   96 0004 93B0     		sub	sp, sp, #76
   97              		.cfi_def_cfa_offset 96
-  21:QSPI_Settings.cpp ****     inbuff[2] = currentSetting.ModDepth;
-  98              		.loc 6 21 15 view .LVU16
+  19:QSPI_Settings.cpp ****     inbuff[2] = currentSetting.ModDepth;
+  98              		.loc 6 19 15 view .LVU16
   99 0006 8668     		ldr	r6, [r0, #8]	@ float
-  22:QSPI_Settings.cpp ****     inbuff[3] = currentSetting.ModFreq;
-  23:QSPI_Settings.cpp ****     inbuff[4] = currentSetting.HP_Cutoff;
-  24:QSPI_Settings.cpp ****     inbuff[5] = currentSetting.LP_Cutoff;
-  25:QSPI_Settings.cpp ****     inbuff[6] = currentSetting.Resonance;
-  26:QSPI_Settings.cpp ****     inbuff[7] = currentSetting.FilterPrePost;
-  27:QSPI_Settings.cpp ****     
-  28:QSPI_Settings.cpp ****     //split into 8bit chunks:
-  29:QSPI_Settings.cpp ****     //skip first byte - out by one byte for some reason
-  30:QSPI_Settings.cpp **** 
-  31:QSPI_Settings.cpp ****     uint8_t writebuff[(4 * BUFF_SIZE) + 1];
-  32:QSPI_Settings.cpp ****     writebuff[0] = 0; //ignore first value?
- 100              		.loc 6 32 18 view .LVU17
+  20:QSPI_Settings.cpp ****     inbuff[3] = currentSetting.ModFreq;
+  21:QSPI_Settings.cpp ****     inbuff[4] = currentSetting.HP_Cutoff;
+  22:QSPI_Settings.cpp ****     inbuff[5] = currentSetting.LP_Cutoff;
+  23:QSPI_Settings.cpp ****     inbuff[6] = currentSetting.Resonance;
+  24:QSPI_Settings.cpp ****     inbuff[7] = currentSetting.FilterPrePost;
+  25:QSPI_Settings.cpp ****     
+  26:QSPI_Settings.cpp ****     //split into 8bit chunks:
+  27:QSPI_Settings.cpp ****     //skip first byte - out by one byte for some reason
+  28:QSPI_Settings.cpp ****     uint8_t writebuff[(4 * BUFF_SIZE) + 1];
+  29:QSPI_Settings.cpp ****     writebuff[0] = 0; //ignore first value?
+ 100              		.loc 6 29 18 view .LVU17
  101 0008 0023     		movs	r3, #0
-  20:QSPI_Settings.cpp ****     inbuff[2] = currentSetting.ModDepth;
- 102              		.loc 6 20 15 view .LVU18
+  18:QSPI_Settings.cpp ****     inbuff[2] = currentSetting.ModDepth;
+ 102              		.loc 6 18 15 view .LVU18
  103 000a 0295     		str	r5, [sp, #8]	@ float
  104 000c 09A9     		add	r1, sp, #36
-  22:QSPI_Settings.cpp ****     inbuff[3] = currentSetting.ModFreq;
- 105              		.loc 6 22 15 view .LVU19
+  20:QSPI_Settings.cpp ****     inbuff[3] = currentSetting.ModFreq;
+ 105              		.loc 6 20 15 view .LVU19
  106 000e C568     		ldr	r5, [r0, #12]	@ float
  107 0010 02AC     		add	r4, sp, #8
- 108              		.loc 6 32 18 view .LVU20
+ 108              		.loc 6 29 18 view .LVU20
  109 0012 8DF82430 		strb	r3, [sp, #36]
  110 0016 0F46     		mov	r7, r1
-  22:QSPI_Settings.cpp ****     inbuff[3] = currentSetting.ModFreq;
- 111              		.loc 6 22 15 view .LVU21
+  20:QSPI_Settings.cpp ****     inbuff[3] = currentSetting.ModFreq;
+ 111              		.loc 6 20 15 view .LVU21
  112 0018 0495     		str	r5, [sp, #16]	@ float
-  24:QSPI_Settings.cpp ****     inbuff[6] = currentSetting.Resonance;
- 113              		.loc 6 24 15 view .LVU22
+  22:QSPI_Settings.cpp ****     inbuff[6] = currentSetting.Resonance;
+ 113              		.loc 6 22 15 view .LVU22
  114 001a 4569     		ldr	r5, [r0, #20]	@ float
-  19:QSPI_Settings.cpp ****     inbuff[1] = currentSetting.tapRatio;
- 115              		.loc 6 19 32 view .LVU23
+  17:QSPI_Settings.cpp ****     inbuff[1] = currentSetting.tapRatio;
+ 115              		.loc 6 17 32 view .LVU23
  116 001c 0368     		ldr	r3, [r0]	@ float
-  21:QSPI_Settings.cpp ****     inbuff[3] = currentSetting.ModFreq;
- 117              		.loc 6 21 15 view .LVU24
+  19:QSPI_Settings.cpp ****     inbuff[3] = currentSetting.ModFreq;
+ 117              		.loc 6 19 15 view .LVU24
  118 001e 0396     		str	r6, [sp, #12]	@ float
-  24:QSPI_Settings.cpp ****     inbuff[6] = currentSetting.Resonance;
-ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 8
-
-
- 119              		.loc 6 24 15 view .LVU25
+  22:QSPI_Settings.cpp ****     inbuff[6] = currentSetting.Resonance;
+ 119              		.loc 6 22 15 view .LVU25
  120 0020 0695     		str	r5, [sp, #24]	@ float
-  23:QSPI_Settings.cpp ****     inbuff[5] = currentSetting.LP_Cutoff;
- 121              		.loc 6 23 15 view .LVU26
+  21:QSPI_Settings.cpp ****     inbuff[5] = currentSetting.LP_Cutoff;
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s 			page 8
+
+
+ 121              		.loc 6 21 15 view .LVU26
  122 0022 0669     		ldr	r6, [r0, #16]	@ float
-  25:QSPI_Settings.cpp ****     inbuff[7] = currentSetting.FilterPrePost;
- 123              		.loc 6 25 15 view .LVU27
+  23:QSPI_Settings.cpp ****     inbuff[7] = currentSetting.FilterPrePost;
+ 123              		.loc 6 23 15 view .LVU27
  124 0024 8569     		ldr	r5, [r0, #24]	@ float
-  26:QSPI_Settings.cpp ****     
- 125              		.loc 6 26 15 view .LVU28
+  24:QSPI_Settings.cpp ****     
+ 125              		.loc 6 24 15 view .LVU28
  126 0026 C069     		ldr	r0, [r0, #28]	@ float
  127              	.LVL2:
-  19:QSPI_Settings.cpp ****     inbuff[1] = currentSetting.tapRatio;
- 128              		.loc 6 19 15 view .LVU29
+  17:QSPI_Settings.cpp ****     inbuff[1] = currentSetting.tapRatio;
+ 128              		.loc 6 17 15 view .LVU29
  129 0028 0193     		str	r3, [sp, #4]	@ float
-  20:QSPI_Settings.cpp ****     inbuff[2] = currentSetting.ModDepth;
- 130              		.loc 6 20 5 is_stmt 1 view .LVU30
-  21:QSPI_Settings.cpp ****     inbuff[3] = currentSetting.ModFreq;
- 131              		.loc 6 21 5 view .LVU31
-  22:QSPI_Settings.cpp ****     inbuff[4] = currentSetting.HP_Cutoff;
- 132              		.loc 6 22 5 view .LVU32
-  23:QSPI_Settings.cpp ****     inbuff[5] = currentSetting.LP_Cutoff;
- 133              		.loc 6 23 5 view .LVU33
-  23:QSPI_Settings.cpp ****     inbuff[5] = currentSetting.LP_Cutoff;
- 134              		.loc 6 23 15 is_stmt 0 view .LVU34
+  18:QSPI_Settings.cpp ****     inbuff[2] = currentSetting.ModDepth;
+ 130              		.loc 6 18 5 is_stmt 1 view .LVU30
+  19:QSPI_Settings.cpp ****     inbuff[3] = currentSetting.ModFreq;
+ 131              		.loc 6 19 5 view .LVU31
+  20:QSPI_Settings.cpp ****     inbuff[4] = currentSetting.HP_Cutoff;
+ 132              		.loc 6 20 5 view .LVU32
+  21:QSPI_Settings.cpp ****     inbuff[5] = currentSetting.LP_Cutoff;
+ 133              		.loc 6 21 5 view .LVU33
+  21:QSPI_Settings.cpp ****     inbuff[5] = currentSetting.LP_Cutoff;
+ 134              		.loc 6 21 15 is_stmt 0 view .LVU34
  135 002a 0596     		str	r6, [sp, #20]	@ float
-  24:QSPI_Settings.cpp ****     inbuff[6] = currentSetting.Resonance;
- 136              		.loc 6 24 5 is_stmt 1 view .LVU35
-  25:QSPI_Settings.cpp ****     inbuff[7] = currentSetting.FilterPrePost;
- 137              		.loc 6 25 5 view .LVU36
-  25:QSPI_Settings.cpp ****     inbuff[7] = currentSetting.FilterPrePost;
- 138              		.loc 6 25 15 is_stmt 0 view .LVU37
+  22:QSPI_Settings.cpp ****     inbuff[6] = currentSetting.Resonance;
+ 136              		.loc 6 22 5 is_stmt 1 view .LVU35
+  23:QSPI_Settings.cpp ****     inbuff[7] = currentSetting.FilterPrePost;
+ 137              		.loc 6 23 5 view .LVU36
+  23:QSPI_Settings.cpp ****     inbuff[7] = currentSetting.FilterPrePost;
+ 138              		.loc 6 23 15 is_stmt 0 view .LVU37
  139 002c 0795     		str	r5, [sp, #28]	@ float
-  26:QSPI_Settings.cpp ****     
- 140              		.loc 6 26 5 is_stmt 1 view .LVU38
-  26:QSPI_Settings.cpp ****     
- 141              		.loc 6 26 15 is_stmt 0 view .LVU39
+  24:QSPI_Settings.cpp ****     
+ 140              		.loc 6 24 5 is_stmt 1 view .LVU38
+  24:QSPI_Settings.cpp ****     
+ 141              		.loc 6 24 15 is_stmt 0 view .LVU39
  142 002e 0890     		str	r0, [sp, #32]	@ float
-  31:QSPI_Settings.cpp ****     writebuff[0] = 0; //ignore first value?
- 143              		.loc 6 31 5 is_stmt 1 view .LVU40
- 144              		.loc 6 32 5 view .LVU41
-  33:QSPI_Settings.cpp ****     for(uint8_t i = 0; i < BUFF_SIZE; i++) 
- 145              		.loc 6 33 5 view .LVU42
+  28:QSPI_Settings.cpp ****     writebuff[0] = 0; //ignore first value?
+ 143              		.loc 6 28 5 is_stmt 1 view .LVU40
+ 144              		.loc 6 29 5 view .LVU41
+  30:QSPI_Settings.cpp ****     for(uint8_t i = 0; i < BUFF_SIZE; i++) 
+ 145              		.loc 6 30 5 view .LVU42
  146              	.LVL3:
  147              	.LBB50:
- 148              		.loc 6 33 26 view .LVU43
+ 148              		.loc 6 30 26 view .LVU43
  149 0030 01E0     		b	.L5
  150              	.LVL4:
  151              	.L8:
- 152              		.loc 6 33 26 is_stmt 0 view .LVU44
+ 152              		.loc 6 30 26 is_stmt 0 view .LVU44
  153 0032 54F8043B 		ldr	r3, [r4], #4	@ float
  154              	.L5:
  155              	.LBB51:
-  34:QSPI_Settings.cpp ****     {
-  35:QSPI_Settings.cpp ****         uint8_t bytes[sizeof(float)];
- 156              		.loc 6 35 9 is_stmt 1 discriminator 2 view .LVU45
-  36:QSPI_Settings.cpp ****         *(float*)(bytes) = inbuff[i];
-ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 9
+  31:QSPI_Settings.cpp ****     {
+  32:QSPI_Settings.cpp ****         uint8_t bytes[sizeof(float)];
+ 156              		.loc 6 32 9 is_stmt 1 discriminator 2 view .LVU45
+  33:QSPI_Settings.cpp ****         *(float*)(bytes) = inbuff[i];
+ 157              		.loc 6 33 9 discriminator 2 view .LVU46
+  34:QSPI_Settings.cpp **** 
+  35:QSPI_Settings.cpp ****         writebuff[(4*i) + 1] = bytes[0];
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s 			page 9
 
 
- 157              		.loc 6 36 9 discriminator 2 view .LVU46
-  37:QSPI_Settings.cpp **** 
-  38:QSPI_Settings.cpp ****         writebuff[(4*i) + 1] = bytes[0];
- 158              		.loc 6 38 9 discriminator 2 view .LVU47
-  39:QSPI_Settings.cpp ****         writebuff[(4*i) + 2] = bytes[1];
- 159              		.loc 6 39 30 is_stmt 0 discriminator 2 view .LVU48
+ 158              		.loc 6 35 9 discriminator 2 view .LVU47
+  36:QSPI_Settings.cpp ****         writebuff[(4*i) + 2] = bytes[1];
+ 159              		.loc 6 36 30 is_stmt 0 discriminator 2 view .LVU48
  160 0036 C3F30726 		ubfx	r6, r3, #8, #8
-  40:QSPI_Settings.cpp ****         writebuff[(4*i) + 3] = bytes[2];
- 161              		.loc 6 40 30 discriminator 2 view .LVU49
+  37:QSPI_Settings.cpp ****         writebuff[(4*i) + 3] = bytes[2];
+ 161              		.loc 6 37 30 discriminator 2 view .LVU49
  162 003a C3F30745 		ubfx	r5, r3, #16, #8
-  41:QSPI_Settings.cpp ****         writebuff[(4*i) + 4] = bytes[3];
- 163              		.loc 6 41 30 discriminator 2 view .LVU50
+  38:QSPI_Settings.cpp ****         writebuff[(4*i) + 4] = bytes[3];
+ 163              		.loc 6 38 30 discriminator 2 view .LVU50
  164 003e C3F30760 		ubfx	r0, r3, #24, #8
  165              	.LBE51:
-  33:QSPI_Settings.cpp ****     {
- 166              		.loc 6 33 26 discriminator 2 view .LVU51
+  30:QSPI_Settings.cpp ****     {
+ 166              		.loc 6 30 26 discriminator 2 view .LVU51
  167 0042 BC42     		cmp	r4, r7
  168              	.LBB52:
-  38:QSPI_Settings.cpp ****         writebuff[(4*i) + 2] = bytes[1];
- 169              		.loc 6 38 30 discriminator 2 view .LVU52
+  35:QSPI_Settings.cpp ****         writebuff[(4*i) + 2] = bytes[1];
+ 169              		.loc 6 35 30 discriminator 2 view .LVU52
  170 0044 4B70     		strb	r3, [r1, #1]
-  39:QSPI_Settings.cpp ****         writebuff[(4*i) + 3] = bytes[2];
- 171              		.loc 6 39 9 is_stmt 1 discriminator 2 view .LVU53
-  39:QSPI_Settings.cpp ****         writebuff[(4*i) + 3] = bytes[2];
- 172              		.loc 6 39 30 is_stmt 0 discriminator 2 view .LVU54
+  36:QSPI_Settings.cpp ****         writebuff[(4*i) + 3] = bytes[2];
+ 171              		.loc 6 36 9 is_stmt 1 discriminator 2 view .LVU53
+  36:QSPI_Settings.cpp ****         writebuff[(4*i) + 3] = bytes[2];
+ 172              		.loc 6 36 30 is_stmt 0 discriminator 2 view .LVU54
  173 0046 8E70     		strb	r6, [r1, #2]
-  40:QSPI_Settings.cpp ****         writebuff[(4*i) + 4] = bytes[3];
- 174              		.loc 6 40 9 is_stmt 1 discriminator 2 view .LVU55
-  40:QSPI_Settings.cpp ****         writebuff[(4*i) + 4] = bytes[3];
- 175              		.loc 6 40 30 is_stmt 0 discriminator 2 view .LVU56
+  37:QSPI_Settings.cpp ****         writebuff[(4*i) + 4] = bytes[3];
+ 174              		.loc 6 37 9 is_stmt 1 discriminator 2 view .LVU55
+  37:QSPI_Settings.cpp ****         writebuff[(4*i) + 4] = bytes[3];
+ 175              		.loc 6 37 30 is_stmt 0 discriminator 2 view .LVU56
  176 0048 CD70     		strb	r5, [r1, #3]
- 177              		.loc 6 41 9 is_stmt 1 discriminator 2 view .LVU57
- 178              		.loc 6 41 30 is_stmt 0 discriminator 2 view .LVU58
+ 177              		.loc 6 38 9 is_stmt 1 discriminator 2 view .LVU57
+ 178              		.loc 6 38 30 is_stmt 0 discriminator 2 view .LVU58
  179 004a 01F8040F 		strb	r0, [r1, #4]!
  180              	.LBE52:
-  33:QSPI_Settings.cpp ****     {
- 181              		.loc 6 33 5 is_stmt 1 discriminator 2 view .LVU59
-  33:QSPI_Settings.cpp ****     {
- 182              		.loc 6 33 26 discriminator 2 view .LVU60
+  30:QSPI_Settings.cpp ****     {
+ 181              		.loc 6 30 5 is_stmt 1 discriminator 2 view .LVU59
+  30:QSPI_Settings.cpp ****     {
+ 182              		.loc 6 30 26 discriminator 2 view .LVU60
  183 004e F0D1     		bne	.L8
  184              	.LBE50:
-  42:QSPI_Settings.cpp ****         
-  43:QSPI_Settings.cpp ****         /*
-  44:QSPI_Settings.cpp ****         char32_t inbuff_int{char32_t(inbuff[i])};
-  45:QSPI_Settings.cpp ****         writebuff[(4*i) + 1] = (inbuff_int >> 24);
-  46:QSPI_Settings.cpp ****         writebuff[(4*i) + 2] = (inbuff_int >> 16)  & 0xFF;
-  47:QSPI_Settings.cpp ****         writebuff[(4*i) + 3] = (inbuff_int >>  8)  & 0xFF;
-  48:QSPI_Settings.cpp ****         writebuff[(4*i) + 4] = (inbuff_int)        & 0xFF;
-  49:QSPI_Settings.cpp ****         */
-  50:QSPI_Settings.cpp ****     }
-  51:QSPI_Settings.cpp **** 
-  52:QSPI_Settings.cpp ****     hw.qspi_handle.mode = DSY_QSPI_MODE_INDIRECT_POLLING;
- 185              		.loc 6 52 5 view .LVU61
- 186              		.loc 6 52 25 is_stmt 0 view .LVU62
+  39:QSPI_Settings.cpp ****     }
+  40:QSPI_Settings.cpp **** 
+  41:QSPI_Settings.cpp ****     hw.qspi_handle.mode = DSY_QSPI_MODE_INDIRECT_POLLING;
+ 185              		.loc 6 41 5 view .LVU61
+ 186              		.loc 6 41 25 is_stmt 0 view .LVU62
  187 0050 0123     		movs	r3, #1
  188 0052 0948     		ldr	r0, .L9
-  53:QSPI_Settings.cpp **** 	dsy_qspi_init(&hw.qspi_handle);
-ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 10
-
-
-  54:QSPI_Settings.cpp ****     dsy_qspi_erase(base, base + ((BUFF_SIZE + 1) * sizeof(membuff[0])));
- 189              		.loc 6 54 19 view .LVU63
+  42:QSPI_Settings.cpp **** 	dsy_qspi_init(&hw.qspi_handle);
+  43:QSPI_Settings.cpp ****     dsy_qspi_erase(base, base + ((BUFF_SIZE + 1) * sizeof(membuff[0])));
+ 189              		.loc 6 43 19 view .LVU63
  190 0054 094C     		ldr	r4, .L9+4
-  52:QSPI_Settings.cpp **** 	dsy_qspi_init(&hw.qspi_handle);
- 191              		.loc 6 52 25 view .LVU64
+  41:QSPI_Settings.cpp **** 	dsy_qspi_init(&hw.qspi_handle);
+ 191              		.loc 6 41 25 view .LVU64
  192 0056 00F8033F 		strb	r3, [r0, #3]!
-  53:QSPI_Settings.cpp **** 	dsy_qspi_init(&hw.qspi_handle);
- 193              		.loc 6 53 2 is_stmt 1 view .LVU65
-  53:QSPI_Settings.cpp **** 	dsy_qspi_init(&hw.qspi_handle);
- 194              		.loc 6 53 15 is_stmt 0 view .LVU66
+  42:QSPI_Settings.cpp **** 	dsy_qspi_init(&hw.qspi_handle);
+ 193              		.loc 6 42 2 is_stmt 1 view .LVU65
+  42:QSPI_Settings.cpp **** 	dsy_qspi_init(&hw.qspi_handle);
+ 194              		.loc 6 42 15 is_stmt 0 view .LVU66
  195 005a FFF7FEFF 		bl	dsy_qspi_init
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s 			page 10
+
+
  196              	.LVL5:
- 197              		.loc 6 54 5 is_stmt 1 view .LVU67
- 198              		.loc 6 54 19 is_stmt 0 view .LVU68
+ 197              		.loc 6 43 5 is_stmt 1 view .LVU67
+ 198              		.loc 6 43 19 is_stmt 0 view .LVU68
  199 005e 2068     		ldr	r0, [r4]
  200 0060 00F12401 		add	r1, r0, #36
  201 0064 FFF7FEFF 		bl	dsy_qspi_erase
  202              	.LVL6:
-  55:QSPI_Settings.cpp ****     return dsy_qspi_write(base, (BUFF_SIZE + 1) * sizeof(membuff[0]), (uint8_t*)writebuff);
- 203              		.loc 6 55 5 is_stmt 1 view .LVU69
- 204              		.loc 6 55 26 is_stmt 0 view .LVU70
+  44:QSPI_Settings.cpp ****     return dsy_qspi_write(base, (BUFF_SIZE + 1) * sizeof(membuff[0]), (uint8_t*)writebuff);
+ 203              		.loc 6 44 5 is_stmt 1 view .LVU69
+ 204              		.loc 6 44 26 is_stmt 0 view .LVU70
  205 0068 09AA     		add	r2, sp, #36
  206 006a 2421     		movs	r1, #36
  207 006c 2068     		ldr	r0, [r4]
  208 006e FFF7FEFF 		bl	dsy_qspi_write
  209              	.LVL7:
-  56:QSPI_Settings.cpp ****     //dsy_qspi_erase(base, base + 2);
-  57:QSPI_Settings.cpp ****     //return dsy_qspi_write(base, 2, (uint8_t*)writebuff);
-  58:QSPI_Settings.cpp **** }
- 210              		.loc 6 58 1 view .LVU71
+  45:QSPI_Settings.cpp **** }
+ 210              		.loc 6 45 1 view .LVU71
  211 0072 13B0     		add	sp, sp, #76
  212              		.cfi_def_cfa_offset 20
  213              		@ sp needed
@@ -593,28 +580,28 @@ ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 1
  232              	_Z12LoadSettingsv:
  233              	.LVL8:
  234              	.LFB3594:
-  59:QSPI_Settings.cpp **** 
-  60:QSPI_Settings.cpp **** //retreive data from flash memory
-  61:QSPI_Settings.cpp **** Settings LoadSettings()
-  62:QSPI_Settings.cpp **** {
- 235              		.loc 6 62 1 is_stmt 1 view -0
-ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 11
-
-
+  46:QSPI_Settings.cpp **** 
+  47:QSPI_Settings.cpp **** //retreive data from flash memory
+  48:QSPI_Settings.cpp **** Settings LoadSettings()
+  49:QSPI_Settings.cpp **** {
+ 235              		.loc 6 49 1 is_stmt 1 view -0
  236              		.cfi_startproc
  237              		@ args = 0, pretend = 0, frame = 72
  238              		@ frame_needed = 0, uses_anonymous_args = 0
-  63:QSPI_Settings.cpp ****     uint8_t outbuff[(4 * BUFF_SIZE) + 1];
- 239              		.loc 6 63 5 view .LVU73
-  64:QSPI_Settings.cpp ****     float readbuff[BUFF_SIZE];
- 240              		.loc 6 64 5 view .LVU74
-  65:QSPI_Settings.cpp ****     Settings SettingsInFlash{};
- 241              		.loc 6 65 5 view .LVU75
-  66:QSPI_Settings.cpp **** 
-  67:QSPI_Settings.cpp ****     hw.qspi_handle.mode = DSY_QSPI_MODE_DSY_MEMORY_MAPPED;
- 242              		.loc 6 67 5 view .LVU76
-  62:QSPI_Settings.cpp ****     uint8_t outbuff[(4 * BUFF_SIZE) + 1];
- 243              		.loc 6 62 1 is_stmt 0 view .LVU77
+  50:QSPI_Settings.cpp ****     uint8_t outbuff[(4 * BUFF_SIZE) + 1];
+ 239              		.loc 6 50 5 view .LVU73
+  51:QSPI_Settings.cpp ****     float readbuff[BUFF_SIZE];
+ 240              		.loc 6 51 5 view .LVU74
+  52:QSPI_Settings.cpp ****     Settings SettingsInFlash{};
+ 241              		.loc 6 52 5 view .LVU75
+  53:QSPI_Settings.cpp **** 
+  54:QSPI_Settings.cpp ****     hw.qspi_handle.mode = DSY_QSPI_MODE_DSY_MEMORY_MAPPED;
+ 242              		.loc 6 54 5 view .LVU76
+  49:QSPI_Settings.cpp ****     uint8_t outbuff[(4 * BUFF_SIZE) + 1];
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s 			page 11
+
+
+ 243              		.loc 6 49 1 is_stmt 0 view .LVU77
  244 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
  245              		.cfi_def_cfa_offset 24
  246              		.cfi_offset 4, -24
@@ -624,32 +611,31 @@ ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 1
  250              		.cfi_offset 8, -8
  251              		.cfi_offset 14, -4
  252 0004 8046     		mov	r8, r0
- 253              		.loc 6 67 25 view .LVU78
+ 253              		.loc 6 54 25 view .LVU78
  254 0006 0025     		movs	r5, #0
  255 0008 2048     		ldr	r0, .L17
  256              	.LVL9:
-  62:QSPI_Settings.cpp ****     uint8_t outbuff[(4 * BUFF_SIZE) + 1];
- 257              		.loc 6 62 1 view .LVU79
+  49:QSPI_Settings.cpp ****     uint8_t outbuff[(4 * BUFF_SIZE) + 1];
+ 257              		.loc 6 49 1 view .LVU79
  258 000a 92B0     		sub	sp, sp, #72
  259              		.cfi_def_cfa_offset 96
-  68:QSPI_Settings.cpp ****     dsy_qspi_init(&hw.qspi_handle);
-  69:QSPI_Settings.cpp **** 
-  70:QSPI_Settings.cpp ****     //memcpy(outbuff,membuff,sizeof(membuff[0]) * TEST_BUFF_SIZE);
-  71:QSPI_Settings.cpp ****     memcpy((void*)&outbuff,(void*)membuff,sizeof(outbuff));
- 260              		.loc 6 71 11 view .LVU80
+  55:QSPI_Settings.cpp ****     dsy_qspi_init(&hw.qspi_handle);
+  56:QSPI_Settings.cpp **** 
+  57:QSPI_Settings.cpp ****     memcpy((void*)&outbuff,(void*)membuff,sizeof(outbuff));
+ 260              		.loc 6 57 11 view .LVU80
  261 000c 204E     		ldr	r6, .L17+4
-  67:QSPI_Settings.cpp ****     dsy_qspi_init(&hw.qspi_handle);
- 262              		.loc 6 67 25 view .LVU81
+  54:QSPI_Settings.cpp ****     dsy_qspi_init(&hw.qspi_handle);
+ 262              		.loc 6 54 25 view .LVU81
  263 000e 00F8035F 		strb	r5, [r0, #3]!
-  68:QSPI_Settings.cpp ****     dsy_qspi_init(&hw.qspi_handle);
- 264              		.loc 6 68 5 is_stmt 1 view .LVU82
+  55:QSPI_Settings.cpp ****     dsy_qspi_init(&hw.qspi_handle);
+ 264              		.loc 6 55 5 is_stmt 1 view .LVU82
  265 0012 01AC     		add	r4, sp, #4
-  68:QSPI_Settings.cpp ****     dsy_qspi_init(&hw.qspi_handle);
- 266              		.loc 6 68 18 is_stmt 0 view .LVU83
+  55:QSPI_Settings.cpp ****     dsy_qspi_init(&hw.qspi_handle);
+ 266              		.loc 6 55 18 is_stmt 0 view .LVU83
  267 0014 FFF7FEFF 		bl	dsy_qspi_init
  268              	.LVL10:
- 269              		.loc 6 71 5 is_stmt 1 view .LVU84
- 270              		.loc 6 71 11 is_stmt 0 view .LVU85
+ 269              		.loc 6 57 5 is_stmt 1 view .LVU84
+ 270              		.loc 6 57 11 is_stmt 0 view .LVU85
  271 0018 0DF1240C 		add	ip, sp, #36
  272 001c 2746     		mov	r7, r4
  273 001e 0FCE     		ldmia	r6!, {r0, r1, r2, r3}
@@ -658,170 +644,169 @@ ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 1
  276 0026 D6F800E0 		ldr	lr, [r6]
  277 002a 09AE     		add	r6, sp, #36
  278 002c ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
-ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 12
-
-
  279 0030 8CF800E0 		strb	lr, [ip]
-  72:QSPI_Settings.cpp ****     uint8_t bytes[sizeof(float)];
- 280              		.loc 6 72 5 is_stmt 1 view .LVU86
-  73:QSPI_Settings.cpp **** 
-  74:QSPI_Settings.cpp ****     for(uint8_t i = 0; i < BUFF_SIZE; i++)
- 281              		.loc 6 74 5 view .LVU87
+  58:QSPI_Settings.cpp ****     uint8_t bytes[sizeof(float)];
+ 280              		.loc 6 58 5 is_stmt 1 view .LVU86
+  59:QSPI_Settings.cpp **** 
+  60:QSPI_Settings.cpp ****     for(uint8_t i = 0; i < BUFF_SIZE; i++)
+ 281              		.loc 6 60 5 view .LVU87
  282              	.LVL11:
  283              	.LBB53:
- 284              		.loc 6 74 26 view .LVU88
+ 284              		.loc 6 60 26 view .LVU88
  285              	.L13:
  286              	.LBB54:
  287              	.LBB55:
-  75:QSPI_Settings.cpp ****     {
-  76:QSPI_Settings.cpp ****         //readbuff[i] = float((outbuff[4*i] << 24) | (outbuff[(4*i)+1] << 16) | (outbuff[(4*i)+2] <
-  77:QSPI_Settings.cpp ****         for (uint8_t j = 0; j < sizeof(float); j++)
- 288              		.loc 6 77 31 view .LVU89
+  61:QSPI_Settings.cpp ****     {
+  62:QSPI_Settings.cpp ****         for (uint8_t j = 0; j < sizeof(float); j++)
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s 			page 12
+
+
+ 288              		.loc 6 62 31 view .LVU89
  289 0034 6B46     		mov	r3, sp
  290              	.LBE55:
  291              	.LBE54:
  292              	.LBE53:
-  71:QSPI_Settings.cpp ****     uint8_t bytes[sizeof(float)];
- 293              		.loc 6 71 11 is_stmt 0 view .LVU90
+  57:QSPI_Settings.cpp ****     uint8_t bytes[sizeof(float)];
+ 293              		.loc 6 57 11 is_stmt 0 view .LVU90
  294 0036 3246     		mov	r2, r6
  295              	.LVL12:
  296              	.L12:
  297              	.LBB59:
  298              	.LBB57:
  299              	.LBB56:
-  78:QSPI_Settings.cpp ****         {
-  79:QSPI_Settings.cpp ****             bytes[j] = outbuff[(4*i) + j];
- 300              		.loc 6 79 13 is_stmt 1 discriminator 2 view .LVU91
- 301              		.loc 6 79 41 is_stmt 0 discriminator 2 view .LVU92
+  63:QSPI_Settings.cpp ****         {
+  64:QSPI_Settings.cpp ****             bytes[j] = outbuff[(4*i) + j];
+ 300              		.loc 6 64 13 is_stmt 1 discriminator 2 view .LVU91
+ 301              		.loc 6 64 41 is_stmt 0 discriminator 2 view .LVU92
  302 0038 12F8011B 		ldrb	r1, [r2], #1	@ zero_extendqisi2
  303              	.LVL13:
- 304              		.loc 6 79 22 discriminator 2 view .LVU93
+ 304              		.loc 6 64 22 discriminator 2 view .LVU93
  305 003c 03F8011B 		strb	r1, [r3], #1
-  77:QSPI_Settings.cpp ****         {
- 306              		.loc 6 77 9 is_stmt 1 discriminator 2 view .LVU94
+  62:QSPI_Settings.cpp ****         {
+ 306              		.loc 6 62 9 is_stmt 1 discriminator 2 view .LVU94
  307              	.LVL14:
-  77:QSPI_Settings.cpp ****         {
- 308              		.loc 6 77 31 discriminator 2 view .LVU95
+  62:QSPI_Settings.cpp ****         {
+ 308              		.loc 6 62 31 discriminator 2 view .LVU95
  309 0040 A342     		cmp	r3, r4
  310 0042 F9D1     		bne	.L12
  311              	.LBE56:
-  80:QSPI_Settings.cpp ****         }
-  81:QSPI_Settings.cpp ****         readbuff[i] = *(float*)(bytes);
- 312              		.loc 6 81 9 discriminator 2 view .LVU96
+  65:QSPI_Settings.cpp ****         }
+  66:QSPI_Settings.cpp ****         readbuff[i] = *(float*)(bytes);
+ 312              		.loc 6 66 9 discriminator 2 view .LVU96
  313 0044 0435     		adds	r5, r5, #4
  314              	.LVL15:
- 315              		.loc 6 81 21 is_stmt 0 discriminator 2 view .LVU97
+ 315              		.loc 6 66 21 is_stmt 0 discriminator 2 view .LVU97
  316 0046 009B     		ldr	r3, [sp]	@ float
  317 0048 0436     		adds	r6, r6, #4
  318              	.LBE57:
-  74:QSPI_Settings.cpp ****     {
- 319              		.loc 6 74 26 discriminator 2 view .LVU98
+  60:QSPI_Settings.cpp ****     {
+ 319              		.loc 6 60 26 discriminator 2 view .LVU98
  320 004a 202D     		cmp	r5, #32
  321              	.LBB58:
-ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 13
-
-
- 322              		.loc 6 81 21 discriminator 2 view .LVU99
+ 322              		.loc 6 66 21 discriminator 2 view .LVU99
  323 004c 47F8043B 		str	r3, [r7], #4	@ float
  324              	.LBE58:
-  74:QSPI_Settings.cpp ****     {
- 325              		.loc 6 74 5 is_stmt 1 discriminator 2 view .LVU100
-  74:QSPI_Settings.cpp ****     {
- 326              		.loc 6 74 26 discriminator 2 view .LVU101
+  60:QSPI_Settings.cpp ****     {
+ 325              		.loc 6 60 5 is_stmt 1 discriminator 2 view .LVU100
+  60:QSPI_Settings.cpp ****     {
+ 326              		.loc 6 60 26 discriminator 2 view .LVU101
  327 0050 F0D1     		bne	.L13
  328              	.LBE59:
-  82:QSPI_Settings.cpp ****     }
-  83:QSPI_Settings.cpp **** 
-  84:QSPI_Settings.cpp **** SettingsInFlash.RevLength = readbuff[0];
- 329              		.loc 6 84 1 view .LVU102
- 330              		.loc 6 84 27 is_stmt 0 view .LVU103
+  67:QSPI_Settings.cpp ****     }
+  68:QSPI_Settings.cpp **** 
+  69:QSPI_Settings.cpp **** SettingsInFlash.RevLength = readbuff[0];
+ 329              		.loc 6 69 1 view .LVU102
+ 330              		.loc 6 69 27 is_stmt 0 view .LVU103
  331 0052 019C     		ldr	r4, [sp, #4]	@ float
-  85:QSPI_Settings.cpp **** SettingsInFlash.tapRatio = readbuff[1];
-  86:QSPI_Settings.cpp **** SettingsInFlash.ModDepth = readbuff[2];
-  87:QSPI_Settings.cpp **** SettingsInFlash.ModFreq = readbuff[3];
-  88:QSPI_Settings.cpp **** SettingsInFlash.HP_Cutoff = readbuff[4];
-  89:QSPI_Settings.cpp **** SettingsInFlash.LP_Cutoff = readbuff[5];
-  90:QSPI_Settings.cpp **** SettingsInFlash.Resonance = readbuff[6];
-  91:QSPI_Settings.cpp **** SettingsInFlash.FilterPrePost = readbuff[7];
-  92:QSPI_Settings.cpp **** 
-  93:QSPI_Settings.cpp **** return SettingsInFlash;
-  94:QSPI_Settings.cpp **** 
-  95:QSPI_Settings.cpp **** }...
- 332              		.loc 6 95 1 view .LVU104
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s 			page 13
+
+
+  70:QSPI_Settings.cpp **** SettingsInFlash.tapRatio = readbuff[1];
+  71:QSPI_Settings.cpp **** SettingsInFlash.ModDepth = readbuff[2];
+  72:QSPI_Settings.cpp **** SettingsInFlash.ModFreq = readbuff[3];
+  73:QSPI_Settings.cpp **** SettingsInFlash.HP_Cutoff = readbuff[4];
+  74:QSPI_Settings.cpp **** SettingsInFlash.LP_Cutoff = readbuff[5];
+  75:QSPI_Settings.cpp **** SettingsInFlash.Resonance = readbuff[6];
+  76:QSPI_Settings.cpp **** SettingsInFlash.FilterPrePost = readbuff[7];
+  77:QSPI_Settings.cpp **** 
+  78:QSPI_Settings.cpp **** return SettingsInFlash;
+  79:QSPI_Settings.cpp **** 
+  80:QSPI_Settings.cpp **** }...
+ 332              		.loc 6 80 1 view .LVU104
  333 0054 4046     		mov	r0, r8
-  85:QSPI_Settings.cpp **** SettingsInFlash.tapRatio = readbuff[1];
- 334              		.loc 6 85 26 view .LVU105
+  70:QSPI_Settings.cpp **** SettingsInFlash.tapRatio = readbuff[1];
+ 334              		.loc 6 70 26 view .LVU105
  335 0056 0299     		ldr	r1, [sp, #8]	@ float
-  86:QSPI_Settings.cpp **** SettingsInFlash.ModDepth = readbuff[2];
- 336              		.loc 6 86 26 view .LVU106
+  71:QSPI_Settings.cpp **** SettingsInFlash.ModDepth = readbuff[2];
+ 336              		.loc 6 71 26 view .LVU106
  337 0058 039A     		ldr	r2, [sp, #12]	@ float
  338              	.LVL16:
-  87:QSPI_Settings.cpp **** SettingsInFlash.ModFreq = readbuff[3];
- 339              		.loc 6 87 25 view .LVU107
+  72:QSPI_Settings.cpp **** SettingsInFlash.ModFreq = readbuff[3];
+ 339              		.loc 6 72 25 view .LVU107
  340 005a 049B     		ldr	r3, [sp, #16]	@ float
-  84:QSPI_Settings.cpp **** SettingsInFlash.RevLength = readbuff[0];
- 341              		.loc 6 84 27 view .LVU108
+  69:QSPI_Settings.cpp **** SettingsInFlash.RevLength = readbuff[0];
+ 341              		.loc 6 69 27 view .LVU108
  342 005c C8F80040 		str	r4, [r8]	@ float
-  85:QSPI_Settings.cpp **** SettingsInFlash.tapRatio = readbuff[1];
- 343              		.loc 6 85 1 is_stmt 1 view .LVU109
-  85:QSPI_Settings.cpp **** SettingsInFlash.tapRatio = readbuff[1];
- 344              		.loc 6 85 26 is_stmt 0 view .LVU110
+  70:QSPI_Settings.cpp **** SettingsInFlash.tapRatio = readbuff[1];
+ 343              		.loc 6 70 1 is_stmt 1 view .LVU109
+  70:QSPI_Settings.cpp **** SettingsInFlash.tapRatio = readbuff[1];
+ 344              		.loc 6 70 26 is_stmt 0 view .LVU110
  345 0060 C8F80410 		str	r1, [r8, #4]	@ float
-  86:QSPI_Settings.cpp **** SettingsInFlash.ModDepth = readbuff[2];
- 346              		.loc 6 86 1 is_stmt 1 view .LVU111
-  88:QSPI_Settings.cpp **** SettingsInFlash.HP_Cutoff = readbuff[4];
- 347              		.loc 6 88 27 is_stmt 0 view .LVU112
+  71:QSPI_Settings.cpp **** SettingsInFlash.ModDepth = readbuff[2];
+ 346              		.loc 6 71 1 is_stmt 1 view .LVU111
+  73:QSPI_Settings.cpp **** SettingsInFlash.HP_Cutoff = readbuff[4];
+ 347              		.loc 6 73 27 is_stmt 0 view .LVU112
  348 0064 059C     		ldr	r4, [sp, #20]	@ float
-  89:QSPI_Settings.cpp **** SettingsInFlash.LP_Cutoff = readbuff[5];
- 349              		.loc 6 89 27 view .LVU113
+  74:QSPI_Settings.cpp **** SettingsInFlash.LP_Cutoff = readbuff[5];
+ 349              		.loc 6 74 27 view .LVU113
  350 0066 0699     		ldr	r1, [sp, #24]	@ float
-  86:QSPI_Settings.cpp **** SettingsInFlash.ModDepth = readbuff[2];
- 351              		.loc 6 86 26 view .LVU114
+  71:QSPI_Settings.cpp **** SettingsInFlash.ModDepth = readbuff[2];
+ 351              		.loc 6 71 26 view .LVU114
  352 0068 C8F80820 		str	r2, [r8, #8]	@ float
-ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 14
-
-
-  87:QSPI_Settings.cpp **** SettingsInFlash.ModFreq = readbuff[3];
- 353              		.loc 6 87 1 is_stmt 1 view .LVU115
-  87:QSPI_Settings.cpp **** SettingsInFlash.ModFreq = readbuff[3];
- 354              		.loc 6 87 25 is_stmt 0 view .LVU116
+  72:QSPI_Settings.cpp **** SettingsInFlash.ModFreq = readbuff[3];
+ 353              		.loc 6 72 1 is_stmt 1 view .LVU115
+  72:QSPI_Settings.cpp **** SettingsInFlash.ModFreq = readbuff[3];
+ 354              		.loc 6 72 25 is_stmt 0 view .LVU116
  355 006c C8F80C30 		str	r3, [r8, #12]	@ float
-  88:QSPI_Settings.cpp **** SettingsInFlash.HP_Cutoff = readbuff[4];
- 356              		.loc 6 88 1 is_stmt 1 view .LVU117
-  90:QSPI_Settings.cpp **** SettingsInFlash.Resonance = readbuff[6];
- 357              		.loc 6 90 27 is_stmt 0 view .LVU118
+  73:QSPI_Settings.cpp **** SettingsInFlash.HP_Cutoff = readbuff[4];
+ 356              		.loc 6 73 1 is_stmt 1 view .LVU117
+  75:QSPI_Settings.cpp **** SettingsInFlash.Resonance = readbuff[6];
+ 357              		.loc 6 75 27 is_stmt 0 view .LVU118
  358 0070 079A     		ldr	r2, [sp, #28]	@ float
-  91:QSPI_Settings.cpp **** SettingsInFlash.FilterPrePost = readbuff[7];
- 359              		.loc 6 91 31 view .LVU119
+  76:QSPI_Settings.cpp **** SettingsInFlash.FilterPrePost = readbuff[7];
+ 359              		.loc 6 76 31 view .LVU119
  360 0072 089B     		ldr	r3, [sp, #32]	@ float
-  88:QSPI_Settings.cpp **** SettingsInFlash.HP_Cutoff = readbuff[4];
- 361              		.loc 6 88 27 view .LVU120
+  73:QSPI_Settings.cpp **** SettingsInFlash.HP_Cutoff = readbuff[4];
+ 361              		.loc 6 73 27 view .LVU120
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s 			page 14
+
+
  362 0074 C8F81040 		str	r4, [r8, #16]	@ float
-  89:QSPI_Settings.cpp **** SettingsInFlash.LP_Cutoff = readbuff[5];
- 363              		.loc 6 89 1 is_stmt 1 view .LVU121
-  89:QSPI_Settings.cpp **** SettingsInFlash.LP_Cutoff = readbuff[5];
- 364              		.loc 6 89 27 is_stmt 0 view .LVU122
+  74:QSPI_Settings.cpp **** SettingsInFlash.LP_Cutoff = readbuff[5];
+ 363              		.loc 6 74 1 is_stmt 1 view .LVU121
+  74:QSPI_Settings.cpp **** SettingsInFlash.LP_Cutoff = readbuff[5];
+ 364              		.loc 6 74 27 is_stmt 0 view .LVU122
  365 0078 C8F81410 		str	r1, [r8, #20]	@ float
-  90:QSPI_Settings.cpp **** SettingsInFlash.Resonance = readbuff[6];
- 366              		.loc 6 90 1 is_stmt 1 view .LVU123
-  90:QSPI_Settings.cpp **** SettingsInFlash.Resonance = readbuff[6];
- 367              		.loc 6 90 27 is_stmt 0 view .LVU124
+  75:QSPI_Settings.cpp **** SettingsInFlash.Resonance = readbuff[6];
+ 366              		.loc 6 75 1 is_stmt 1 view .LVU123
+  75:QSPI_Settings.cpp **** SettingsInFlash.Resonance = readbuff[6];
+ 367              		.loc 6 75 27 is_stmt 0 view .LVU124
  368 007c C8F81820 		str	r2, [r8, #24]	@ float
-  91:QSPI_Settings.cpp **** SettingsInFlash.FilterPrePost = readbuff[7];
- 369              		.loc 6 91 1 is_stmt 1 view .LVU125
-  91:QSPI_Settings.cpp **** SettingsInFlash.FilterPrePost = readbuff[7];
- 370              		.loc 6 91 31 is_stmt 0 view .LVU126
+  76:QSPI_Settings.cpp **** SettingsInFlash.FilterPrePost = readbuff[7];
+ 369              		.loc 6 76 1 is_stmt 1 view .LVU125
+  76:QSPI_Settings.cpp **** SettingsInFlash.FilterPrePost = readbuff[7];
+ 370              		.loc 6 76 31 is_stmt 0 view .LVU126
  371 0080 C8F81C30 		str	r3, [r8, #28]	@ float
-  93:QSPI_Settings.cpp **** return SettingsInFlash;
- 372              		.loc 6 93 1 is_stmt 1 view .LVU127
- 373              		.loc 6 95 1 is_stmt 0 view .LVU128
+  78:QSPI_Settings.cpp **** return SettingsInFlash;
+ 372              		.loc 6 78 1 is_stmt 1 view .LVU127
+ 373              		.loc 6 80 1 is_stmt 0 view .LVU128
  374 0084 12B0     		add	sp, sp, #72
  375              		.cfi_def_cfa_offset 24
  376              		@ sp needed
  377 0086 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
  378              	.LVL17:
  379              	.L18:
- 380              		.loc 6 95 1 view .LVU129
+ 380              		.loc 6 80 1 view .LVU129
  381 008a 00BF     		.align	2
  382              	.L17:
  383 008c 00000000 		.word	.LANCHOR0
@@ -837,10 +822,7 @@ ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 1
  394              		.fpu fpv5-d16
  396              	_GLOBAL__sub_I_base:
  397              	.LFB4132:
- 398              		.loc 6 95 1 is_stmt 1 view -0
-ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 15
-
-
+ 398              		.loc 6 80 1 is_stmt 1 view -0
  399              		.cfi_startproc
  400              		@ args = 0, pretend = 0, frame = 0
  401              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -848,7 +830,7 @@ ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 1
  403              	.LVL18:
  404              	.LBB60:
  405              	.LBI60:
- 406              		.loc 6 95 1 view .LVU131
+ 406              		.loc 6 80 1 view .LVU131
  407              	.LBB61:
  408              	.LBB62:
  409              	.LBI62:
@@ -856,6 +838,9 @@ ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 1
  410              		.loc 1 21 5 view .LVU132
  411              	.LBB63:
  412              	.LBB64:
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s 			page 15
+
+
  413              	.LBI64:
   36:../DaisyExamples/libdaisy/src/hid/audio.h ****     ~AudioHandle() {}
  414              		.loc 5 36 5 view .LVU133
@@ -898,9 +883,6 @@ ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 1
  438              	.LBE67:
  439              	.LBE68:
  440              	.LBE69:
-ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 16
-
-
  441              	.LBB70:
  442              	.LBI70:
   84:../DaisyExamples/libdaisy/src/per/adc.h ****     ~AdcHandle() {}
@@ -916,6 +898,9 @@ ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 1
  449              		.loc 3 40 5 is_stmt 0 view .LVU141
  450              	.LBE71:
  451              	.LBB72:
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s 			page 16
+
+
  452              	.LBI72:
   56:../DaisyExamples/libdaisy/src/sys/system.h ****     ~System() {}
  453              		.loc 2 56 5 is_stmt 1 view .LVU142
@@ -958,9 +943,6 @@ ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 1
  490              		.section	.qspiflash_bss,"aw"
  491              		.align	2
  492              		.set	.LANCHOR2,. + 0
-ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 17
-
-
  495              	_ZL7membuff:
  496 0000 00000000 		.space	132
  496      00000000 
@@ -976,6 +958,9 @@ ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 1
  503              		.file 12 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
  504              		.file 13 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
  505              		.file 14 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s 			page 17
+
+
  506              		.file 15 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
  507              		.file 16 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
  508              		.file 17 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/c++/9.2.1/
@@ -1018,36 +1003,33 @@ ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 1
  545              		.file 54 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/wchar.h"
  546              		.file 55 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/locale.h"
  547              		.file 56 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/ctype.h"
-ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 18
-
-
  548              		.file 57 "/usr/local/Cellar/arm-none-eabi-gcc/9-2019-q4-major/gcc/arm-none-eabi/include/sys/errno.
  549              		.file 58 "QSPI_Settings.h"
  550              		.file 59 "../DaisyExamples/libdaisy/src/dev/sr_595.h"
-ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s 			page 19
+ARM GAS  /var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s 			page 18
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 QSPI_Settings.cpp
-/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s:17     .text._ZN5daisy9DaisySeedD2Ev:0000000000000000 $t
-/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s:26     .text._ZN5daisy9DaisySeedD2Ev:0000000000000000 _ZN5daisy9DaisySeedD2Ev
-/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s:26     .text._ZN5daisy9DaisySeedD2Ev:0000000000000000 _ZN5daisy9DaisySeedD1Ev
-/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s:67     .text._Z12SaveSettingsRK8Settings:0000000000000000 $t
-/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s:75     .text._Z12SaveSettingsRK8Settings:0000000000000000 _Z12SaveSettingsRK8Settings
-/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s:218    .text._Z12SaveSettingsRK8Settings:0000000000000078 $d
-/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s:224    .text._Z12LoadSettingsv:0000000000000000 $t
-/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s:232    .text._Z12LoadSettingsv:0000000000000000 _Z12LoadSettingsv
-/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s:383    .text._Z12LoadSettingsv:000000000000008c $d
-/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s:389    .text.startup._GLOBAL__sub_I_base:0000000000000000 $t
-/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s:396    .text.startup._GLOBAL__sub_I_base:0000000000000000 _GLOBAL__sub_I_base
-/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s:464    .text.startup._GLOBAL__sub_I_base:0000000000000010 $d
-/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s:473    .init_array:0000000000000000 $d
-/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s:488    .data.base:0000000000000000 base
-/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s:477    .bss._ZL2hw:0000000000000000 $d
-/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s:481    .bss._ZL2hw:0000000000000000 _ZL2hw
-/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s:484    .data.base:0000000000000000 $d
-/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s:495    .qspiflash_bss:0000000000000000 _ZL7membuff
-/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//ccQjnnVI.s:491    .qspiflash_bss:0000000000000000 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s:17     .text._ZN5daisy9DaisySeedD2Ev:0000000000000000 $t
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s:26     .text._ZN5daisy9DaisySeedD2Ev:0000000000000000 _ZN5daisy9DaisySeedD2Ev
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s:26     .text._ZN5daisy9DaisySeedD2Ev:0000000000000000 _ZN5daisy9DaisySeedD1Ev
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s:67     .text._Z12SaveSettingsRK8Settings:0000000000000000 $t
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s:75     .text._Z12SaveSettingsRK8Settings:0000000000000000 _Z12SaveSettingsRK8Settings
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s:218    .text._Z12SaveSettingsRK8Settings:0000000000000078 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s:224    .text._Z12LoadSettingsv:0000000000000000 $t
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s:232    .text._Z12LoadSettingsv:0000000000000000 _Z12LoadSettingsv
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s:383    .text._Z12LoadSettingsv:000000000000008c $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s:389    .text.startup._GLOBAL__sub_I_base:0000000000000000 $t
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s:396    .text.startup._GLOBAL__sub_I_base:0000000000000000 _GLOBAL__sub_I_base
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s:464    .text.startup._GLOBAL__sub_I_base:0000000000000010 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s:473    .init_array:0000000000000000 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s:488    .data.base:0000000000000000 base
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s:477    .bss._ZL2hw:0000000000000000 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s:481    .bss._ZL2hw:0000000000000000 _ZL2hw
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s:484    .data.base:0000000000000000 $d
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s:495    .qspiflash_bss:0000000000000000 _ZL7membuff
+/var/folders/0d/2ntwfkp1791d52chq7d_xwdm0000gn/T//cc6TphlC.s:491    .qspiflash_bss:0000000000000000 $d
                            .group:0000000000000000 _ZN5daisy9DaisySeedD5Ev
 
 UNDEFINED SYMBOLS
